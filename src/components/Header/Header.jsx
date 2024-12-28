@@ -21,6 +21,14 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    setIsDarkMode(prefersDark);
+    document.documentElement.classList.toggle("dark", prefersDark);
+  }, []);
+
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle("dark", !isDarkMode);
@@ -32,9 +40,9 @@ const Header = () => {
         isScrolled
           ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-lg"
           : "bg-white/50 dark:bg-gray-900/50"
-      } text-gray-900 dark:text-gray-100`}
+      }`}
     >
-      <header className="w-full max-w-7xl mx-auto px-6 py-4 flex dark:text-white justify-between items-center relative">
+      <header className="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative dark:text-gray-100 text-gray-900">
         <Logo />
         <div className="flex items-center gap-4">
           <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
@@ -62,3 +70,5 @@ const Header = () => {
     </div>
   );
 };
+
+export default Header;
