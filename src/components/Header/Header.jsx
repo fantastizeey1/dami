@@ -44,7 +44,7 @@ const Header = () => {
     >
       <header className="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative dark:text-gray-100 text-gray-900">
         <Logo />
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-12">
           <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
           <MobileMenuButton
             isOpen={isMobileMenuOpen}

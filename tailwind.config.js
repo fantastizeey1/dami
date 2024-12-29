@@ -7,8 +7,10 @@ export default {
       animation: {
         "slide-up": "slideUp 15s linear infinite",
         "slide-down": "slideDown 15s linear infinite",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       colors: {
+        "brand-maroon": "#800020",
         brand: {
           maroon: "#850000",
           black: "#000000",

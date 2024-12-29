@@ -3,7 +3,7 @@ import React from "react";
 const ImageColumn = ({ images, direction = "up" }) => {
   return (
     <div
-      className={`flex flex-col gap-6 animate-slide-${direction} hover:pause-animation`}
+      className={`flex mt-[200px] flex-col gap-6 animate-slide-${direction} hover:pause-animation`}
     >
       {images.map((image, index) => (
         <div
