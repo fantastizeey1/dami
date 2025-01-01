@@ -3,9 +3,9 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import BelowFold from "./components/Hero/BelowFold";
 import Services from "./components/Services/Services";
-import WhychooseUs from "./components/WhychooseUs/WhychooseUs";
 import TestimonialSlider from "./components/Testimonial/Testimonial";
 import EmailCTA from "./components/CTA/EmailCTA";
+import WhyChooseUs from "./components/WhychooseUs/WhychooseUs";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Hero />
       <BelowFold />
       <Services />
-      <WhychooseUs />
+      <WhyChooseUs />
       <TestimonialSlider />
       <EmailCTA />
     </main>
