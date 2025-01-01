@@ -31,12 +31,12 @@ const TestimonialSlider = () => {
   }, [next]);
 
   return (
-    <section className="relative bg-gray-100 dark:bg-gray-900 min-h-[500px] flex items-center px-12 overflow-hidden">
+    <section className="relative bg-gray-100  dark:bg-gray-900 md:min-h-[500px] flex items-center px-12 overflow-hidden">
       <NavigationButton direction="left" onClick={prev}>
         <ArrowLeft className="w-6 h-6 dark:text-gray-100 text-gray-900" />
       </NavigationButton>
 
-      <div className="w-full py-20">
+      <div className="w-full py-5 md:py-20">
         <div
           className={`transition-opacity duration-500 ${
             isTransitioning ? "opacity-0" : "opacity-100"

@@ -19,7 +19,7 @@ const ScrollToTopAndThemeToggleWrapper = ({ isDarkMode, toggleTheme }) => {
   }, []);
 
   return (
-    <div className="fixed bottom-8 right-8 flex flex-col gap-4">
+    <div className="fixed bottom-8 right-1 flex flex-col gap-4">
       {/* Scroll to Top Button */}
       <ScrollToTopButton isVisible={isVisible} />
 

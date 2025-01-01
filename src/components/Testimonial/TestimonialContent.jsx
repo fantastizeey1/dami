@@ -2,8 +2,8 @@ import React from "react";
 
 export const TestimonialContent = ({ testimonial }) => {
   return (
-    <div className="relative z-10 max-w-4xl mx-auto flex flex-col justify-start text-start items-start px-4">
-      <p className="dark:text-white text-slate-700 text-4xl font-semibold mb-12 leading-tight text-center">
+    <div className="relative z-10 max-w-4xl mx-auto flex flex-col justify-start md:text-start items-start px-4 text-justify">
+      <p className="dark:text-white text-slate-700 text-xl lg:text-4xl font-semibold mb-2 md:mb-12 leading-tight text-center">
         {testimonial.quote}
       </p>
 
