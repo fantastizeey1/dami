@@ -72,6 +72,27 @@
   }
 }
 
+.scroll-to-top-gradient {
+  background: linear-gradient(
+    45deg,
+    #3b82f6,
+    #9333ea,
+    #f43f5e
+  ); /* Define gradient colors */
+  background-size: 200% 200%; /* Enlarge background to enable animation */
+  animation: gradientMove 3s ease infinite; /* Use the gradient animation */
+}
+
+@keyframes gradientMove {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -84,6 +105,64 @@
   animation: slide-up 0.8s ease-out forwards;
   animation-delay: 0.2s;
   opacity: 0;
+}
+
+.slide-right {
+  transform: translateX(-100px);
+}
+
+.slide-left {
+  transform: translateX(100px);
+}
+
+.show {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+.image-container {
+  position: relative;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.image-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.image-container:hover .image-wrapper {
+  transform: translateZ(20px) rotateY(-5deg);
+}
+
+.image-container:hover .image-wrapper::before {
+  opacity: 1;
+}
+
+/* Dark mode adjustments */
+.dark .image-wrapper::before {
+  background: linear-gradient(45deg, #60a5fa, #2563eb);
 }
 
 /* body {

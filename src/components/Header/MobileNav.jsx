@@ -17,7 +17,7 @@ const MobileNav = ({
           <div className="flex justify-between items-center">
             <a
               href={`#${item.name.toLowerCase().replace(/ /g, "-")}`}
-              className="hover:text-green-500"
+              className="hover:text-[#850000]"
               aria-label={`Go to ${item.name}`}
             >
               {item.name}

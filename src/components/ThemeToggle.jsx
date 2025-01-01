@@ -5,10 +5,10 @@ const ThemeToggle = ({ isDarkMode, toggleTheme }) => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 text-sm mr-10 border rounded-lg transition-all hover:opacity-80"
+      className="p-2  border w-fit rounded-full dark:bg-gray-200 bg-gray-800 text-white dark:text-black transition-all hover:opacity-80"
       aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
     >
-      {isDarkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
+      {isDarkMode ? <FiSun size={25} /> : <FiMoon size={25} />}
     </button>
   );
 };

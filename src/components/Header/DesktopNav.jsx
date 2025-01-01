@@ -14,7 +14,7 @@ const DesktopNav = ({ navItems, openSubmenuIndex, setOpenSubmenuIndex }) => {
         >
           <a
             href={`#${item.name.toLowerCase().replace(/ /g, "-")}`}
-            className="hover:text-green-500 flex items-center text-gray-900 dark:text-gray-100"
+            className="hover:text-[#850000] flex items-center text-gray-900 dark:text-gray-100 dark:hover:text-[#923a3a]"
             aria-label={`Go to ${item.name}`}
           >
             {item.name}

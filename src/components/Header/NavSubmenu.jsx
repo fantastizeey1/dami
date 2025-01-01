@@ -11,7 +11,7 @@ const NavSubmenu = ({ items, isMobile = false }) => {
         <a
           key={index}
           href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-          className="px-4 py-2 hover:text-green-500 whitespace-nowrap"
+          className="px-4 py-2 hover:text-[#850000] whitespace-nowrap"
           aria-label={`Go to ${item}`}
         >
           {item}
