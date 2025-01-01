@@ -1,37 +1,25 @@
-import { useEffect, useState } from "react";
+import { useTheme } from "./ThemeContext";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-import BelowFold from "./components/Hero/BelowFold";
-import Services from "./components/Services/Services";
-import TestimonialSlider from "./components/Testimonial/Testimonial";
-import EmailCTA from "./components/CTA/EmailCTA";
-import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import ScrollToTopAndThemeToggleWrapper from "./components/ScrollToTopAndThemeToggleWrapper";
+import About from "./components/About/About";
+import Home from "./components/Home/Home";
+
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode, toggleTheme } = useTheme();
 
-  useEffect(() => {
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    setIsDarkMode(prefersDark);
-    document.documentElement.classList.toggle("dark", prefersDark);
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-    document.documentElement.classList.toggle("dark", !isDarkMode);
-  };
   return (
-    <main className="min-w-full dark:bg-gray-900">
+    <main className={`min-w-full ${isDarkMode ? "dark:bg-gray-900" : ""}`}>
       <Header />
-      <Hero />
-      <BelowFold />
-      <Services />
-      <WhyChooseUs />
-      <TestimonialSlider />
-      <EmailCTA />
-      {/* Scroll to Top and Theme Toggle Buttons */}
+
+      {/* Routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="*" element={<NotFound />} /> {/* Fallback route */}
+      </Routes>
+
+      {/* Scroll-to-Top and Theme Toggle */}
       <ScrollToTopAndThemeToggleWrapper
         isDarkMode={isDarkMode}
         toggleTheme={toggleTheme}
@@ -39,5 +27,12 @@ function App() {
     </main>
   );
 }
+
+// NotFound Component
+const NotFound = () => (
+  <div className="text-center">
+    <h2 className="text-2xl">404 - Page Not Found</h2>
+  </div>
+);
 
 export default App;

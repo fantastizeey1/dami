@@ -1,6 +1,7 @@
 import React from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import NavSubmenu from "./NavSubmenu";
+import { NavLink } from "react-router-dom";
 
 const DesktopNav = ({ navItems, openSubmenuIndex, setOpenSubmenuIndex }) => {
   return (
@@ -12,8 +13,8 @@ const DesktopNav = ({ navItems, openSubmenuIndex, setOpenSubmenuIndex }) => {
           onMouseEnter={() => setOpenSubmenuIndex(index)}
           onMouseLeave={() => setOpenSubmenuIndex(null)}
         >
-          <a
-            href={`#${item.name.toLowerCase().replace(/ /g, "-")}`}
+          <NavLink
+            to={`${item.name.toLowerCase().replace(/ /g, "-")}`}
             className="hover:text-[#850000] flex items-center text-gray-900 dark:text-gray-100 dark:hover:text-[#923a3a]"
             aria-label={`Go to ${item.name}`}
           >
@@ -27,7 +28,7 @@ const DesktopNav = ({ navItems, openSubmenuIndex, setOpenSubmenuIndex }) => {
                 )}
               </span>
             )}
-          </a>
+          </NavLink>
           {item.submenu && openSubmenuIndex === index && (
             <NavSubmenu items={item.submenu} />
           )}

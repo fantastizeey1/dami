@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavSubmenu = ({ items, isMobile = false }) => {
   const baseClasses = isMobile
@@ -8,14 +9,14 @@ const NavSubmenu = ({ items, isMobile = false }) => {
   return (
     <div className={baseClasses}>
       {items.map((item, index) => (
-        <a
+        <NavLink
           key={index}
-          href={`#${item.toLowerCase().replace(/ /g, "-")}`}
+          to={`#${item.toLowerCase().replace(/ /g, "-")}`}
           className="px-4 py-2 hover:text-[#850000] whitespace-nowrap"
           aria-label={`Go to ${item}`}
         >
           {item}
-        </a>
+        </NavLink>
       ))}
     </div>
   );

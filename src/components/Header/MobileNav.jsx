@@ -1,6 +1,7 @@
 import React from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import NavSubmenu from "./NavSubmenu";
+import { NavLink } from "react-router-dom";
 
 const MobileNav = ({
   isOpen,
@@ -15,13 +16,13 @@ const MobileNav = ({
       {navItems.map((item, index) => (
         <div key={index} className="relative">
           <div className="flex justify-between items-center">
-            <a
-              href={`#${item.name.toLowerCase().replace(/ /g, "-")}`}
+            <NavLink
+              to={`#${item.name.toLowerCase().replace(/ /g, "-")}`}
               className="hover:text-[#850000]"
               aria-label={`Go to ${item.name}`}
             >
               {item.name}
-            </a>
+            </NavLink>
             {item.submenu && (
               <button
                 className="ml-2"
