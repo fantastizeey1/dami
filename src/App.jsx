@@ -5,8 +5,7 @@ import BelowFold from "./components/Hero/BelowFold";
 import Services from "./components/Services/Services";
 import TestimonialSlider from "./components/Testimonial/Testimonial";
 import EmailCTA from "./components/CTA/EmailCTA";
-import WhyChooseUs from "./components/WhychooseUs/WhychooseUs";
-
+import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 function App() {
   return (
     <main className="min-w-full dark:bg-gray-900">
