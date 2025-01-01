@@ -61,7 +61,7 @@
   }
 }
 
-@keyframes slide-up {
+@keyframes slide-up-2 {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -80,7 +80,7 @@
   animation: fade-in 1s ease-out forwards;
 }
 
-.animate-slide-up {
+.animate-slide-up-2 {
   animation: slide-up 0.8s ease-out forwards;
   animation-delay: 0.2s;
   opacity: 0;

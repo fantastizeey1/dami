@@ -1,6 +1,6 @@
 import React from "react";
 
-const ImageColumn = ({ images, direction = "up" }) => {
+const ImageColumn = ({ images, direction }) => {
   return (
     <div
       className={`flex mt-[200px] flex-col gap-6 animate-slide-${direction} hover:pause-animation`}
