@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Services from "./components/Services/Services";
 import BlogRightSidebar from "./components/BlogRightSidebar";
+import NotFound from "./components/NotFound";
 
 function App() {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -31,12 +32,5 @@ function App() {
     </main>
   );
 }
-
-// NotFound Component
-const NotFound = () => (
-  <div className="text-center">
-    <h2 className="text-2xl">404 - Page Not Found</h2>
-  </div>
-);
 
 export default App;
