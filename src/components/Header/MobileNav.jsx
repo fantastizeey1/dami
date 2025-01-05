@@ -17,7 +17,7 @@ const MobileNav = ({
         <div key={index} className="relative">
           <div className="flex justify-between items-center">
             <NavLink
-              to={`#${item.name.toLowerCase().replace(/ /g, "-")}`}
+              to={`${item.name.toLowerCase().replace(/ /g, "-")}`}
               className="hover:text-[#850000]"
               aria-label={`Go to ${item.name}`}
             >

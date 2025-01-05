@@ -238,6 +238,37 @@
   object-fit: cover;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
+.service-image-2-alternative {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area */
+
+  /* New clip-path for a different shape */
+  clip-path: polygon(
+    0% 20%,
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%
+  );
+
+  /* Adjusted border-radius for a softer look */
+  border-radius: 30px; /* More rounded corners */
+
+  /* Optional: Add a box shadow for depth */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+
+  /* Optional: Add a transition effect on hover */
+  transition: transform 0.3s ease;
+}
+
+.service-image-2-alternative:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
 
 .image-container:hover .image-wrapper {
   transform: translateZ(20px) rotateY(-5deg);

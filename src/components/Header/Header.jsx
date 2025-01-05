@@ -29,7 +29,7 @@ const Header = () => {
           : "bg-white/50 dark:bg-gray-900/50"
       }`}
     >
-      <header className="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative dark:text-gray-100 text-gray-900">
+      <header className="w-full md:max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative dark:text-gray-100 text-gray-900">
         <Logo />
         <div className="flex items-center gap-12">
           <MobileMenuButton

@@ -8,14 +8,14 @@ import EmailCTA from "./CTA/EmailCTA";
 
 const Home = () => {
   return (
-    <main>
+    <div>
       <Hero />
       <BelowFold />
       <Services />
       <WhyChooseUs />
       <TestimonialSlider />
       <EmailCTA />
-    </main>
+    </div>
   );
 };
 
