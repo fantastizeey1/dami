@@ -13,7 +13,7 @@ const AboutHero = () => {
             Email Always Wins the Day
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-12 animate-fade-in-delay">
-            We prioritize small and medium-sized businesses interested in
+            We prioritise small and medium-sized businesses interested in
             building trust through email marketing excellence.
           </p>
           <a

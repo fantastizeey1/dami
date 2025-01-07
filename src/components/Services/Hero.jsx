@@ -1,39 +1,34 @@
 import React from "react";
 import { useInView } from "./useInView";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   const [ref, isVisible] = useInView();
 
   return (
-    <div className="container mx-auto px-6 py-28">
-      <div className="flex flex-col lg:flex-row items-center">
-        <div
-          ref={ref}
-          className={`lg:w-1/2 transform transition-all duration-700 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}
-        >
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Copywriting is our business
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-900">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-white dark:bg-gray-900"></div>
+      </div>
+      <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 animate-fade-in">
+            Copywriting is our business.
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            We exist to build trust through emails. Our company fully manages
-            your email list so that you can focus on the nitty-gritty of your
-            business.
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-12 animate-fade-in-delay">
+            Our company fully manages your email list so that you can focus on
+            the nitty-gritty of your business.
           </p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105 transform">
-            Let's Collaborate
-          </button>
-        </div>
-        <div className="lg:w-1/2 mt-10 lg:mt-0">
-          <img
-            src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&q=80"
-            alt="Email Marketing"
-            className="service-image-2 hover:scale-105 transition-transform duration-300"
-          />
+          <a
+            href="#services"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 animate-bounce-subtle"
+          >
+            Let’s Collaborate
+            <ArrowRight className="w-5 h-5" />
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
