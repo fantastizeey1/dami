@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const wp = axios.create({
-  baseURL: "http://back.local/wp-json/wp/v2",
+  baseURL: "https://back.local/wp-json/wp/v2",
 });
 
 export const getPosts = () => wp.get("/posts");
