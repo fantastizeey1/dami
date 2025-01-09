@@ -56,7 +56,7 @@ function PostDetail() {
       <article className="max-w-4xl prose dark:prose-invert mx-auto pt-28 px-4 sm:px-6 lg:px-8 pb-16 dark:bg-gray-900 dark:text-white">
         <div className="mb-8">
           <Link
-            to="/blog"
+            to="/learn"
             className="inline-flex items-center text-blue-500 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
