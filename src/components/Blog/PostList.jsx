@@ -102,8 +102,8 @@ const PostList = () => {
             Explore Our Blog
           </h1>
           <p className="text-lg max-w-2xl text-gray-700 dark:text-gray-300">
-            Discover our latest thoughts, ideas, and insights about web
-            development, design, and technology.
+            Discover our latest thoughts, Articles, guides, how-tos and
+            resources to give you strategic edge in marketing..
           </p>
         </div>
 
