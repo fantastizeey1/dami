@@ -5,11 +5,14 @@ import { NavLink } from "react-router-dom";
 
 const MobileNav = ({
   isOpen,
+  setIsOpen,
   navItems,
   openSubmenuIndex,
   setOpenSubmenuIndex,
 }) => {
   if (!isOpen) return null;
+
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <nav className="mx-2 mt-2 rounded-md flex flex-col space-y-4 p-4 md:hidden bg-gray-100 dark:bg-gray-700 shadow-md">
@@ -20,6 +23,7 @@ const MobileNav = ({
               to={`${item.name.toLowerCase().replace(/ /g, "-")}`}
               className="hover:text-[#850000]"
               aria-label={`Go to ${item.name}`}
+              onClick={closeMenu} // Close the menu when an item is selected
             >
               {item.name}
             </NavLink>
@@ -43,7 +47,7 @@ const MobileNav = ({
             )}
           </div>
           {item.submenu && openSubmenuIndex === index && (
-            <NavSubmenu items={item.submenu} isMobile />
+            <NavSubmenu items={item.submenu} isMobile closeMenu={closeMenu} />
           )}
         </div>
       ))}
