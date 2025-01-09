@@ -23,7 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/blog" element={<PostList />} />
+          <Route path="/learn" element={<PostList />} />
           <Route path="/post/:slug" element={<PostDetail />} />
           <Route path="*" element={<NotFound />} /> {/* Fallback route */}
         </Routes>

@@ -7,5 +7,5 @@ export const navItems = [
 
   // { name: "Success Stories" },
   // { name: "Events", submenu: ["Workshops", "Webinars", "Conferences"] },
-  { name: "Blog" },
+  { name: "Learn" },
 ];

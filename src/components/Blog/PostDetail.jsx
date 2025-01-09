@@ -51,7 +51,7 @@ function PostDetail() {
     post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Uncategorized";
 
   return (
-    <article className="max-w-4xl mx-auto pt-28 px-4 sm:px-6 lg:px-8 pb-16 dark:bg-gray-900 dark:text-white">
+    <article className="max-w-4xl prose dark:prose-invert  mx-auto pt-28 px-4 sm:px-6 lg:px-8 pb-16 dark:bg-gray-900 dark:text-white">
       <div className="mb-8">
         <Link
           to="/blog"

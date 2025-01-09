@@ -22,7 +22,7 @@ export function FeaturedPostCard({ post, imageUrl }) {
               <Star className="w-4 h-4 mr-2" /> Featured
             </span>
           </div>
-          <CardTitle className="text-5xl mb-4">
+          <CardTitle className=" text-2xl lg:text-5xl mb-4">
             <Link
               to={`/post/${post.slug}`}
               className="text-gray-900 dark:text-gray-200 hover:text-[#850000] dark:hover:text-[#f35454]"
