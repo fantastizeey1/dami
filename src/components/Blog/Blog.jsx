@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getPosts, getPostBySlug } from "./wordpress";
+import { getPosts, getPostBySlug } from "../lib/wordpress";
 
 function Blog() {
   const [posts, setPosts] = useState([]);

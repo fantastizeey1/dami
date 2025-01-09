@@ -3,15 +3,18 @@ import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Logo = () => {
   return (
-    <div className="w-2/6 flex justify-start items-center">
+    <div className="w-2/6 flex flex-row justify-start items-center">
       <Link to="/">
         {" "}
         {/* Wrap the image with Link */}
-        <img
-          src="/logo.png"
-          alt="Company Logo"
-          className="object-contain w-16 h-12"
-        />
+        <div className="flex flex-row justify-start items-center">
+          <img
+            src="/inky.png"
+            alt="Company Logo"
+            className="object-contain w-16 h-14"
+          />
+          <p className="text-2xl">InkyRepertoire</p>
+        </div>
       </Link>
     </div>
   );
