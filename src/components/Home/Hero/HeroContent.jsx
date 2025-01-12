@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import ContactForm from "../../ContactForm";
 
 const HeroContent = () => {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <div className="w-full md:w-1/2">
       <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
@@ -15,14 +18,16 @@ const HeroContent = () => {
         Start sending emails to your list to boost your sales
       </p>
       <div className="space-y-3">
-        <a
-          href="#collaborate"
+        <button
+          onClick={() => setShowForm(true)}
           className="group inline-flex items-center justify-center px-8 py-3 font-semibold text-white bg-gradient-to-r from-brand-maroon via-purple-600 to-pink-600 rounded-xl hover:opacity-90 transition-opacity"
         >
           Let's Collaborate
           <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-        </a>
+        </button>
       </div>
+
+      {showForm && <ContactForm onClose={() => setShowForm(false)} />}
     </div>
   );
 };

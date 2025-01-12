@@ -25,18 +25,33 @@ const ServiceSection = ({ service, index }) => {
                 : `opacity-0 ${isEven ? "-translate-x-10" : "translate-x-10"}`
             }`}
           >
-            <div className="text-blue-600 dark:text-blue-400 mb-4">
+            <div className="text-[#850000] dark:text-[#850000] mb-4">
               {service.icon}
             </div>
             <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
               {service.title}
             </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-lg text-black/80 dark:text-gray-300 mb-6">
               {service.description}
             </p>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105 transform">
-              Learn More
-            </button>
+            <a href="/learn" className="inline-block">
+              <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#850000]  text-white rounded-lg transition-all duration-300 transform hover:translate-x-1">
+                Learn More
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </a>
           </div>
           <div
             className={`lg:w-1/2 transform transition-all duration-700 ${

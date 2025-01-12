@@ -10,7 +10,6 @@ import CTAButton from "./CTAButton";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
-
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {

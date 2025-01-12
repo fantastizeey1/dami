@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import CTAContent from "./CTAContent";
 import CTAButton from "./CTAButton";
+import { useForm } from "../../../FormProvider";
 
 const EmailCTA = () => {
-  const handleCTAClick = () => {
-    window.location.href = "#contact";
-  };
+  const { setShowForm } = useForm();
 
   return (
     <section className="relative w-full overflow-hidden">
@@ -15,7 +14,7 @@ const EmailCTA = () => {
         <div className="relative flex flex-col items-center justify-between gap-16">
           <CTAContent />
           <div className="flex-shrink-0 animate-float">
-            <CTAButton text="Ask us how" onClick={handleCTAClick} />
+            <CTAButton text="Ask us how" onClick={() => setShowForm(true)} />
           </div>
         </div>
       </div>

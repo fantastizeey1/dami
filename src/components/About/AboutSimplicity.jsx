@@ -30,7 +30,7 @@ const AboutSimplicity = () => {
                 "Guided approach to list growth",
               ].map((item, index) => (
                 <li key={index} className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#850000] rounded-full"></span>
                   <span className="text-gray-700 dark:text-gray-300">
                     {item}
                   </span>

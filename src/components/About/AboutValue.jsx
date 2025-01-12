@@ -37,7 +37,7 @@ const AboutValue = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Your Trusted Value Partner
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-2xl text-black/80 dark:text-gray-300 max-w-2xl mx-auto">
             We're more than just a service provider - we're your strategic
             partner in achieving extraordinary marketing results.
           </p>

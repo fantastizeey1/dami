@@ -9,32 +9,38 @@ import Services from "./components/Services/Services";
 import NotFound from "./components/NotFound";
 import PostList from "./components/Blog/PostList";
 import PostDetail from "./components/Blog/PostDetail";
+import EmailCTA from "./components/Home/CTA/EmailCTA";
+import { FormProvider } from "./FormProvider";
 
-function App() {
+function App({ children }) {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
-    <main className={`max-w-full ${isDarkMode ? "dark:bg-gray-900" : ""}`}>
-      <Router>
-        <Header />
+    <FormProvider>
+      <main className={`max-w-full ${isDarkMode ? "dark:bg-gray-900" : ""}`}>
+        <Router>
+          <Header />
 
-        {/* Routes */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/learn" element={<PostList />} />
-          <Route path="/post/:slug" element={<PostDetail />} />
-          <Route path="*" element={<NotFound />} /> {/* Fallback route */}
-        </Routes>
+          {/* Routes */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/learn" element={<PostList />} />
+            <Route path="/post/:slug" element={<PostDetail />} />
+            <Route path="*" element={<NotFound />} /> {/* Fallback route */}
+          </Routes>
 
-        {/* Scroll-to-Top and Theme Toggle */}
-        <ScrollToTopAndThemeToggleWrapper
-          isDarkMode={isDarkMode}
-          toggleTheme={toggleTheme}
-        />
-      </Router>
-    </main>
+          {/* Scroll-to-Top and Theme Toggle */}
+          <ScrollToTopAndThemeToggleWrapper
+            isDarkMode={isDarkMode}
+            toggleTheme={toggleTheme}
+          />
+
+          <EmailCTA />
+        </Router>
+      </main>
+    </FormProvider>
   );
 }
 

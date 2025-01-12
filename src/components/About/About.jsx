@@ -4,8 +4,8 @@ import ServiceSection from "./ServiceSection";
 import AboutSimplicity from "./AboutSimplicity";
 import AboutValue from "./AboutValue";
 import AboutPartner from "./AboutPartner";
-import AboutCTA from "./AboutCTA";
 import GrowthSection from "./GrowthSection";
+import EmailCTA from "../Home/CTA/EmailCTA";
 
 const About = () => {
   return (
@@ -16,7 +16,6 @@ const About = () => {
       <AboutSimplicity />
       <AboutValue />
       <AboutPartner />
-      <AboutCTA />
     </div>
   );
 };

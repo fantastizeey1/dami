@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { TrendingUp } from "lucide-react";
+import { Calendar, Clock, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "../ui/Card";
 import { getPosts, getComments } from "../lib/wordpress";
 
@@ -11,7 +11,7 @@ const extractImageFromContent = (content) => {
   return img ? img.src : "/api/placeholder/400/300";
 };
 
-const TrendingSection = () => {
+const TrendingSection = ({ readingTime }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -91,12 +91,22 @@ const TrendingSection = () => {
                     dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                   />
 
-                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                  {/* <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                     {new Date(post.date).toLocaleDateString("en-US", {
                       day: "2-digit",
                       month: "long",
                       year: "numeric",
                     })}
+                  </div> */}
+                  <div className="flex items-center justify-between mb-2 space-x-4 text-sm text-gray-700 dark:text-gray-300">
+                    <div className="flex items-center space-x-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>{new Date(post.date).toLocaleDateString()}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Clock className="w-4 h-4" />
+                      <span>{readingTime} min read</span>
+                    </div>
                   </div>
 
                   <div className="text-sm text-gray-500 dark:text-gray-400">

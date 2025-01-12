@@ -5,6 +5,10 @@ import Loading from "./Loading";
 import CommentSection from "./CommentSection";
 import { Calendar, User, Clock, ArrowLeft, Tag } from "lucide-react";
 import TrendingSection from "./TrendingSection";
+import {
+  usePerformanceMonitor,
+  estimateReadingTime,
+} from "./hooks/usePerformanceMonitor";
 
 function PostDetail() {
   const { slug } = useParams();
@@ -124,7 +128,9 @@ function PostDetail() {
           onCommentAdded={() => fetchComments(post.id)}
         />
       </article>
-      <TrendingSection />
+      <TrendingSection
+        readingTime={estimateReadingTime(post.content.rendered)}
+      />
     </div>
   );
 }

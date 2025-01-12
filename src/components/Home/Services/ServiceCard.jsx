@@ -40,7 +40,7 @@ const ServiceSection = ({ service, isReversed }) => {
         isReversed ? "slide-left" : "slide-right"
       }`}
     >
-      <div className="flex-1 space-y-6">
+      <div className="flex-1 space-y-6 gap-3">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-900 transition-colors duration-300">
             <IconWrapper Icon={Icon} />
@@ -52,22 +52,24 @@ const ServiceSection = ({ service, isReversed }) => {
         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
           {description}
         </p>
-        <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 transform hover:translate-x-1">
-          Learn More
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
+        <a href="/learn" className="inline-block">
+          <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#850000] hover:bg-[#ac4949] text-white rounded-lg transition-all duration-300 transform hover:translate-x-1">
+            Learn More
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </a>
       </div>
 
       <div className="flex-1">

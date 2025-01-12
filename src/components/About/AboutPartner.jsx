@@ -32,7 +32,7 @@ const AboutPartner = () => {
                   key={index}
                   className="text-center p-6 rounded-xl bg-gray-50 dark:bg-gray-700"
                 >
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+                  <div className="text-3xl font-bold text-[#850000] dark:text-[#a03434]">
                     {item.stat}
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">
