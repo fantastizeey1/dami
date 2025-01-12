@@ -195,13 +195,13 @@ const PostList = () => {
             </Suspense>
           </ErrorBoundary>
 
-          {filteredPosts.length === 0 ? (
+          {/* {filteredPosts.length === 0 ? (
             <div className="text-center py-12">
               <h3 className="text-2xl font-bold mb-4">No articles found</h3>
             </div>
           ) : (
             <LoadMore onLoadMore={loadMore} loading={loading} />
-          )}
+          )} */}
         </section>
 
         <Suspense fallback={<div>Loading...</div>}>

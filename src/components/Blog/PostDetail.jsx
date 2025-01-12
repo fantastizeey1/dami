@@ -61,7 +61,7 @@ function PostDetail() {
         <div className="mb-8">
           <Link
             to="/learn"
-            className="inline-flex items-center text-blue-500 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300"
+            className="inline-flex items-center text-xl text-[#850000]  font-medium hover:text-[#6b2323] dark:hover:text-[#f35454]"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Blog
@@ -69,7 +69,7 @@ function PostDetail() {
         </div>
 
         <header className="mb-12">
-          <div className="text-sm text-blue-600 dark:text-blue-400 mb-4 font-medium">
+          <div className="font-medium text-[#850000]  mb-4 text-2xl">
             {category}
           </div>
 
