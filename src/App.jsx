@@ -11,6 +11,7 @@ import PostList from "./components/Blog/PostList";
 import PostDetail from "./components/Blog/PostDetail";
 import EmailCTA from "./components/Home/CTA/EmailCTA";
 import { FormProvider } from "./FormProvider";
+import Community from "./components/community";
 
 function App({ children }) {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -28,6 +29,7 @@ function App({ children }) {
             <Route path="/services" element={<Services />} />
             <Route path="/learn" element={<PostList />} />
             <Route path="/post/:slug" element={<PostDetail />} />
+            <Route path="/community" element={<Community />} />
             <Route path="*" element={<NotFound />} /> {/* Fallback route */}
           </Routes>
 
