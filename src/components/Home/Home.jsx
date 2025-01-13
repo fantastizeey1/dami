@@ -14,6 +14,7 @@ const Home = () => {
       <Services />
       <WhyChooseUs />
       <TestimonialSlider />
+      <EmailCTA />
     </div>
   );
 };

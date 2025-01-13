@@ -16,6 +16,7 @@ const About = () => {
       <AboutSimplicity />
       <AboutValue />
       <AboutPartner />
+      <EmailCTA />
     </div>
   );
 };

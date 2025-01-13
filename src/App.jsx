@@ -36,8 +36,6 @@ function App({ children }) {
             isDarkMode={isDarkMode}
             toggleTheme={toggleTheme}
           />
-
-          <EmailCTA />
         </Router>
       </main>
     </FormProvider>

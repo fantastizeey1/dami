@@ -14,7 +14,7 @@ const CTAContent = () => {
           </span>
         </h2>
       </div>
-      <p className="text-xl text-gray-600 dark:text-gray-300 animate-slide-up-2">
+      <p className="text-2xl text-center text-gray-600 dark:text-gray-300 animate-slide-up-2">
         Let's make it count towards your bottom line
       </p>
     </div>
