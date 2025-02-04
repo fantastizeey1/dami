@@ -5,6 +5,7 @@ import Services from "./Services/Services";
 import WhyChooseUs from "./WhyChooseUs/WhyChooseUs";
 import TestimonialSlider from "./Testimonial/Testimonial";
 import EmailCTA from "./CTA/EmailCTA";
+import Footer from "./Footer/Footer";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <WhyChooseUs />
       <TestimonialSlider />
       <EmailCTA />
+      <Footer />
     </div>
   );
 };

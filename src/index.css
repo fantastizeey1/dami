@@ -303,6 +303,23 @@ h6 {
   @apply duration-300 ease-in-out;
 }
 
+/* Custom classes */
+@media (max-width: 480px) {
+  .footer-links {
+    column-count: 2; /* Better mobile link layout */
+  }
+
+  .newsletter-input {
+    font-size: 0.875rem; /* Better mobile readability */
+  }
+}
+
+@media (max-width: 640px) {
+  .social-icons {
+    justify-content: center; /* Center align on smallest screens */
+  }
+}
+
 /* body {
   background-color: black;
 } */
