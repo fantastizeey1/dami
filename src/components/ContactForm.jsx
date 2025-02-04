@@ -43,6 +43,10 @@ const ContactForm = ({ onClose }) => {
       newErrors.phone = "Please enter a valid phone number";
     }
 
+    if (formData.subject.trim() === "") {
+      newErrors.subject = "Subject is required";
+    }
+
     if (formData.message.length < 10) {
       newErrors.message = "Message must be at least 10 characters long";
     }
@@ -56,10 +60,26 @@ const ContactForm = ({ onClose }) => {
     if (!validateForm()) return;
     setIsLoading(true);
 
+    const payload = {
+      "form-name": "contact",
+      ...formData,
+    };
+
+    const encodedData = new URLSearchParams(payload).toString();
+
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setSubmitStatus("success");
-      setTimeout(() => onClose(), 2000);
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodedData,
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setTimeout(() => onClose(), 2000);
+      } else {
+        throw new Error("Submission failed");
+      }
     } catch (error) {
       setSubmitStatus("error");
     } finally {
@@ -179,6 +199,7 @@ const ContactForm = ({ onClose }) => {
             netlify
             className="space-y-6"
           >
+            <input type="hidden" name="form-name" value="contact" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className={labelClassName}>
