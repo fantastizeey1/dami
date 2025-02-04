@@ -4,6 +4,7 @@ import ServiceCards from "./ServiceCards";
 import CTA from "./CTA";
 import { servicesData } from "./servicesData";
 import EmailCTA from "../Home/CTA/EmailCTA";
+import Footer from "../Home/Footer/Footer";
 
 const Services = () => {
   return (
@@ -11,6 +12,7 @@ const Services = () => {
       <Hero />
       <ServiceCards services={servicesData} />
       <EmailCTA />
+      <Footer />
     </div>
   );
 };

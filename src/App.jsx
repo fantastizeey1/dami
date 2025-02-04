@@ -18,7 +18,11 @@ function App({ children }) {
 
   return (
     <FormProvider>
-      <main className={`max-w-full ${isDarkMode ? "dark:bg-gray-900" : ""}`}>
+      <main
+        className={`max-w-full font-playfair ${
+          isDarkMode ? "dark:bg-gray-900" : ""
+        }`}
+      >
         <Router>
           <Header />
 

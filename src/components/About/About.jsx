@@ -6,6 +6,7 @@ import AboutValue from "./AboutValue";
 import AboutPartner from "./AboutPartner";
 import GrowthSection from "./GrowthSection";
 import EmailCTA from "../Home/CTA/EmailCTA";
+import Footer from "../Home/Footer/Footer";
 
 const About = () => {
   return (
@@ -17,6 +18,7 @@ const About = () => {
       <AboutValue />
       <AboutPartner />
       <EmailCTA />
+      <Footer />
     </div>
   );
 };

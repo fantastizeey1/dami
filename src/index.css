@@ -4,8 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.font-playfair {
+  font-family: "Playfair Display", serif;
+  font-weight: 700; /* From the wght@700 in URL */
+}
+
 .nav-hover-btn {
-  @apply relative ms-10  text-xs uppercase text-blue-50 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
+  @apply relative text-xs uppercase text-gray-900 dark:text-gray-100 
+         after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] 
+         after:w-full after:origin-bottom-right after:scale-x-0 
+         after:bg-neutral-800 after:transition-transform after:duration-300 
+         after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left 
+         hover:after:scale-x-100 dark:after:bg-white cursor-pointer
+         transition-colors duration-200;
 }
 
 @keyframes slideUp {
@@ -256,7 +267,7 @@
     0% 80%
   );
 
-  /* Adjusted border-radius for a softer look */
+  /* Adjusted border-radius for a softer look font-playfair */
   border-radius: 30px; /* More rounded corners */
 
   /* Optional: Add a box shadow for depth */

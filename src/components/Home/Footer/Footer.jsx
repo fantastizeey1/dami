@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
 
           {/* Links Column */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-3 sm:space-y-4 justify-self-center">
             <h4 className="font-playfair text-base sm:text-lg font-bold dark:text-gray-100 text-gray-900 mb-2 sm:mb-4">
               Solutions
             </h4>
@@ -29,7 +29,7 @@ const Footer = () => {
                   <li key={item}>
                     <a
                       href="#"
-                      className="nav-hover-btn text-gray-600 dark:text-gray-300 text-xs sm:text-sm transition-all"
+                      className="nav-hover-btn m-0 dark:text-gray-100 text-gray-900 text-xs sm:text-sm transition-all"
                     >
                       {item}
                     </a>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Column */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-3 sm:space-y-4 justify-self-center">
             <h4 className="font-playfair text-base sm:text-lg font-bold dark:text-gray-100 text-gray-900 mb-2 sm:mb-4">
               Contact
             </h4>
