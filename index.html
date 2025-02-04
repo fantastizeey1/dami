@@ -7,6 +7,17 @@
     <title>write</title>
   </head>
   <body>
+    <!-- Hidden Form for Netlify -->
+    <form name="contact" method="POST" netlify hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="company" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

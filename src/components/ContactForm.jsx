@@ -55,37 +55,35 @@ const ContactForm = ({ onClose }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (!validateForm()) return;
-  //   setIsLoading(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    setIsLoading(true);
 
-  //   const payload = {
-  //     "form-name": "contact",
-  //     ...formData,
-  //   };
+    const formData = new FormData();
+    formData.append("form-name", "contact");
+    Object.keys(formData).forEach((key) => {
+      formData.append(key, formData[key]);
+    });
 
-  //   const encodedData = new URLSearchParams(payload).toString();
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        body: formData,
+      });
 
-  //   try {
-  //     const response = await fetch("/", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //       body: encodedData,
-  //     });
-
-  //     if (response.ok) {
-  //       setSubmitStatus("success");
-  //       setTimeout(() => onClose(), 2000);
-  //     } else {
-  //       throw new Error("Submission failed");
-  //     }
-  //   } catch (error) {
-  //     setSubmitStatus("error");
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
+      if (response.ok) {
+        setSubmitStatus("success");
+        setTimeout(() => onClose(), 2000);
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
