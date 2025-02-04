@@ -60,16 +60,20 @@ const ContactForm = ({ onClose }) => {
     if (!validateForm()) return;
     setIsLoading(true);
 
-    const formData = new FormData();
-    formData.append("form-name", "contact");
+    // Create form payload
+    const formPayload = new FormData();
+    formPayload.append("form-name", "contact");
     Object.keys(formData).forEach((key) => {
-      formData.append(key, formData[key]);
+      formPayload.append(key, formData[key]);
     });
 
     try {
       const response = await fetch("/", {
         method: "POST",
-        body: formData,
+        body: new URLSearchParams(formPayload).toString(),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       });
 
       if (response.ok) {
@@ -84,6 +88,36 @@ const ContactForm = ({ onClose }) => {
       setIsLoading(false);
     }
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (!validateForm()) return;
+  //   setIsLoading(true);
+
+  //   const formData = new FormData();
+  //   formData.append("form-name", "contact");
+  //   Object.keys(formData).forEach((key) => {
+  //     formData.append(key, formData[key]);
+  //   });
+
+  //   try {
+  //     const response = await fetch("/", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+
+  //     if (response.ok) {
+  //       setSubmitStatus("success");
+  //       setTimeout(() => onClose(), 2000);
+  //     } else {
+  //       throw new Error("Submission failed");
+  //     }
+  //   } catch (error) {
+  //     setSubmitStatus("error");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -191,7 +225,7 @@ const ContactForm = ({ onClose }) => {
           )}
 
           <form
-            // onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             name="contact"
             method="POST"
             data-netlify="true"
@@ -348,6 +382,27 @@ const ContactForm = ({ onClose }) => {
                 </>
               )}
             </button>
+            {submitStatus === "success" && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-4 p-3 bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-200 rounded-lg flex items-center"
+              >
+                <CheckCircle className="w-5 h-5 mr-2" />
+                Message sent successfully!
+              </motion.div>
+            )}
+
+            {submitStatus === "error" && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-4 p-3 bg-red-100 dark:bg-red-800 text-red-700 dark:text-red-200 rounded-lg flex items-center"
+              >
+                <AlertCircle className="w-5 h-5 mr-2" />
+                Failed to send message. Please try again.
+              </motion.div>
+            )}
           </form>
         </motion.div>
       </motion.div>
