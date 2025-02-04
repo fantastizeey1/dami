@@ -9,9 +9,8 @@ import Services from "./components/Services/Services";
 import NotFound from "./components/NotFound";
 import PostList from "./components/Blog/PostList";
 import PostDetail from "./components/Blog/PostDetail";
-import EmailCTA from "./components/Home/CTA/EmailCTA";
 import { FormProvider } from "./FormProvider";
-import Community from "./components/community";
+import Community from "./components/Community";
 
 function App({ children }) {
   const { isDarkMode, toggleTheme } = useTheme();
