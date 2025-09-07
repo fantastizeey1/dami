@@ -13,7 +13,7 @@ function Comingsoon() {
 
   // Launch date is set to 30 days from now
   useEffect(() => {
-    const targetDate = new Date("2025-05-15T00:00:00Z"); // Set your event's fixed date
+    const targetDate = new Date("2026-05-15T00:00:00Z"); // Set your event's fixed date
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
