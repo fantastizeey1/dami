@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: "primary" | "secondary";
   size?: "sm" | "md" | "lg";
@@ -29,9 +29,11 @@ export const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   size = "md",
   className,
+  ...props // ✅ forward everything else (onClick, aria-label, type, etc.)
 }) => {
   return (
     <button
+      {...props} // ✅ ensures onClick works
       className={clsx(
         baseStyles,
         sizeStyles[size],

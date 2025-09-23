@@ -15,6 +15,7 @@ const FormContext = createContext();
 // Form Provider Component
 export const FormProvider = ({ children }) => {
   const [showForm, setShowForm] = useState(false);
+  console.log("showForm:", showForm);
 
   return (
     <FormContext.Provider value={{ showForm, setShowForm }}>

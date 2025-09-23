@@ -30,7 +30,7 @@ function AppContent() {
   const location = useLocation();
 
   return (
-    <main className={`max-w-full font-sans `}>
+    <main className={`max-w-full font-sans overflow-x-hidden `}>
       {/* Conditionally render Header */}
       {location.pathname !== "/" && <Header />}
 

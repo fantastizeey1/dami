@@ -15,12 +15,12 @@ const DesktopNav = ({ navItems, openSubmenuIndex, setOpenSubmenuIndex }) => {
         >
           <NavLink
             to={`${item.name.toLowerCase().replace(/ /g, "-")}`}
-            className="hover:text-[#850000] flex items-center text-gray-900 dark:text-gray-100 dark:hover:text-[#923a3a]"
+            className=" flex items-center "
             aria-label={`Go to ${item.name}`}
           >
             {item.name}
             {item.submenu && (
-              <span className="ml-1 text-gray-600 dark:text-gray-400">
+              <span className="ml-1">
                 {openSubmenuIndex === index ? (
                   <FiChevronUp size={16} />
                 ) : (

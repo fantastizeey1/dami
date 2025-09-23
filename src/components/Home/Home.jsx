@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "./Hero/Hero";
 import BelowFold from "./Hero/BelowFold";
 import Services from "./Services/Services";

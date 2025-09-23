@@ -1,9 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Logo = () => {
   return (
-    <div className="w-2/6 flex flex-row justify-start items-center">
+    <div className=" flex flex-row justify-start items-center">
       <Link to="/">
         {" "}
         {/* Wrap the image with Link */}
