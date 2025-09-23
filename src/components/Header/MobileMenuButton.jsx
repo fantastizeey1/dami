@@ -4,7 +4,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 const MobileMenuButton = ({ isOpen, toggleMenu }) => {
   return (
     <button
-      className="md:hidden absolute right-2 p-2 focus:outline-none"
+      className="md:hidden  p-2 focus:outline-none"
       onClick={toggleMenu}
       aria-label={isOpen ? "Close Mobile Menu" : "Open Mobile Menu"}
     >

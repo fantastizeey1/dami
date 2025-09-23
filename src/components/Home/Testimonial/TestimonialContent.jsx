@@ -1,7 +1,7 @@
 export const TestimonialContent = ({ testimonial }) => {
   return (
     <div className="relative z-10 max-w-3xl mx-auto flex flex-col justify-start md:text-start items-start px-4 text-justify">
-      <h3 className="h2   mb-4">{testimonial.quote}</h3>
+      <h3 className="h3   mb-4">{testimonial.quote}</h3>
 
       <div className="flex items-center text-start justify-start gap-4">
         <img
