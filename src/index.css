@@ -1,22 +1,87 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.font-playfair {
-  font-family: "Playfair Display", serif;
-  font-weight: 700; /* From the wght@700 in URL */
-}
+/* Typography */
+@layer components {
+  /* h1 */
+  .h1 {
+    @apply font-sans font-bold text-brand-primary;
+    @apply text-3xl leading-tight tracking-tight; /* mobile */
+  }
+  @screen sm {
+    .h1 {
+      @apply text-4xl leading-snug;
+    }
+  }
+  @screen lg {
+    .h1 {
+      @apply text-5xl leading-snug;
+    }
+  }
+  @screen xl {
+    .h1 {
+      @apply text-6xl leading-tight;
+    }
+  }
 
-.nav-hover-btn {
-  @apply relative text-xs uppercase text-gray-900 dark:text-gray-100 
-         after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] 
-         after:w-full after:origin-bottom-right after:scale-x-0 
-         after:bg-neutral-800 after:transition-transform after:duration-300 
-         after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left 
-         hover:after:scale-x-100 dark:after:bg-white cursor-pointer
-         transition-colors duration-200;
+  /* h2 */
+  .h2 {
+    @apply font-sans font-bold;
+    @apply text-4xl leading-snug;
+  }
+  @screen sm {
+    .h2 {
+      @apply text-3xl;
+    }
+  }
+  @screen lg {
+    .h2 {
+      @apply text-4xl leading-snug;
+    }
+  }
+
+  /* h3 */
+  .h3 {
+    @apply font-sans font-semibold;
+    @apply text-xl leading-snug;
+  }
+  @screen sm {
+    .h3 {
+      @apply text-2xl;
+    }
+  }
+  @screen lg {
+    .h3 {
+      @apply text-3xl;
+    }
+  }
+
+  /* h4 */
+  .h4 {
+    @apply font-sans font-semibold;
+    @apply text-xl leading-snug;
+  }
+  @screen sm {
+    .h4 {
+      @apply text-2xl;
+    }
+  }
+  @screen lg {
+    .h4 {
+      @apply text-2xl;
+    }
+  }
+
+  /* Body text */
+  .body-text {
+    @apply font-sans text-base text-brand-text leading-relaxed;
+  }
+  @screen sm {
+    .body-text {
+      @apply text-lg;
+    }
+  }
 }
 
 @keyframes slideUp {
@@ -84,14 +149,9 @@
 }
 
 .scroll-to-top-gradient {
-  background: linear-gradient(
-    45deg,
-    #3b82f6,
-    #9333ea,
-    #f43f5e
-  ); /* Define gradient colors */
-  background-size: 200% 200%; /* Enlarge background to enable animation */
-  animation: gradientMove 3s ease infinite; /* Use the gradient animation */
+  background: linear-gradient(45deg, #3b82f6, #9333ea, #f43f5e);
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
 }
 
 @keyframes gradientMove {
@@ -120,18 +180,6 @@
 
   .animate-bounce-subtle {
     animation: bounceSlight 2s infinite;
-  }
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
@@ -224,63 +272,6 @@
   perspective: 1000px;
 }
 
-.image-wrapper {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-
-.image-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background: linear-gradient(45deg, #3b82f6, #1d4ed8);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.service-image {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-.service-image-2-alternative {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4/3; /* Maintain the aspect ratio */
-  object-fit: cover; /* Ensures the image covers the area */
-
-  /* New clip-path for a different shape */
-  clip-path: polygon(
-    0% 20%,
-    20% 0%,
-    80% 0%,
-    100% 20%,
-    100% 80%,
-    80% 100%,
-    20% 100%,
-    0% 80%
-  );
-
-  /* Adjusted border-radius for a softer look font-playfair */
-  border-radius: 30px; /* More rounded corners */
-
-  /* Optional: Add a box shadow for depth */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-
-  /* Optional: Add a transition effect on hover */
-  transition: transform 0.3s ease;
-}
-
-.service-image-2-alternative:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
 .image-container:hover .image-wrapper {
   transform: translateZ(20px) rotateY(-5deg);
 }
@@ -289,24 +280,9 @@
   opacity: 1;
 }
 
-/* Dark mode adjustments */
-.dark .image-wrapper::before {
-  background: linear-gradient(45deg, #60a5fa, #2563eb);
-}
-
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
-}
-
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-bold tracking-tight;
 }
 
 /* Transitions */

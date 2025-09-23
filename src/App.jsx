@@ -1,4 +1,3 @@
-import { useTheme } from "./ThemeContext";
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,7 +5,6 @@ import {
   useLocation,
 } from "react-router-dom";
 import Header from "./components/Header/Header";
-import ScrollToTopAndThemeToggleWrapper from "./components/ScrollToTopAndThemeToggleWrapper";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Services from "./components/Services/Services";
@@ -16,6 +14,7 @@ import PostDetail from "./components/Blog/PostDetail";
 import { FormProvider } from "./FormProvider";
 import Community from "./components/Community";
 import Comingsoon from "./components/Comingsoon/Comingsoon";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -28,15 +27,10 @@ function App() {
 }
 
 function AppContent() {
-  const { isDarkMode, toggleTheme } = useTheme();
   const location = useLocation();
 
   return (
-    <main
-      className={`max-w-full font-playfair ${
-        isDarkMode ? "dark:bg-gray-900" : ""
-      }`}
-    >
+    <main className={`max-w-full font-sans `}>
       {/* Conditionally render Header */}
       {location.pathname !== "/" && <Header />}
 
@@ -52,10 +46,7 @@ function AppContent() {
       </Routes>
 
       {/* Scroll-to-Top and Theme Toggle */}
-      <ScrollToTopAndThemeToggleWrapper
-        isDarkMode={isDarkMode}
-        toggleTheme={toggleTheme}
-      />
+      <ScrollToTop />
     </main>
   );
 }

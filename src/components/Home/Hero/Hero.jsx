@@ -1,48 +1,77 @@
 import React from "react";
 import HeroContent from "./HeroContent";
-import ImageColumn from "./ImageColumn";
 
-const column1Images = [
+const backgroundImages = [
   {
-    url: "https://images.unsplash.com/photo-1633409361618-c73427e4e206?w=500&h=600&fit=crop",
-    alt: "Modern Email Newsletter Template",
+    url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop",
+    alt: "Modern Workspace with Laptop",
   },
   {
-    url: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=500&h=600&fit=crop",
-    alt: "Email Marketing Campaign",
+    url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop",
+    alt: "Team Collaboration",
   },
   {
-    url: "https://images.unsplash.com/photo-1563986768711-b3bde3dc821e?w=500&h=600&fit=crop",
-    alt: "Email Analytics Dashboard",
-  },
-];
-
-const column2Images = [
-  {
-    url: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=500&h=600&fit=crop",
-    alt: "Marketing Analytics",
+    url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=1080&fit=crop",
+    alt: "Analytics Dashboard",
   },
   {
-    url: "https://images.unsplash.com/photo-1600267204091-5c1ab8b10c02?w=500&h=600&fit=crop",
-    alt: "Email Campaign Results",
+    url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop",
+    alt: "Startup Team Meeting",
   },
   {
-    url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&h=600&fit=crop",
-    alt: "Email Marketing Stats",
+    url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop",
+    alt: "Digital Marketing Presentation",
   },
 ];
 
 const Hero = () => {
   return (
-    <main className="w-full max-w-7xl mx-auto px-8 min-h-screen bg-white dark:bg-gray-900 pt-24">
-      <div className="flex flex-col md:flex-row items-center gap-12">
-        <HeroContent />
-        <div className="w-full md:w-1/2 flex justify-center gap-8 overflow-hidden h-[300px] md:h-[600px]">
-          <ImageColumn images={column1Images} direction="up" />
-          <ImageColumn images={column2Images} direction="down" />
+    <>
+      <style>{`
+        @keyframes slideBackground {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-100%); }
+        }
+        .slide-background {
+          animation: slideBackground 40s linear infinite;
+        }
+      `}</style>
+
+      <main className="relative w-full min-h-screen overflow-hidden">
+        {/* Fullscreen Background Slideshow */}
+        <div className="absolute inset-0 flex slide-background">
+          {backgroundImages.map((image, index) => (
+            <div key={index} className="flex-shrink-0 w-full h-full">
+              <img
+                src={image.url}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {backgroundImages.map((image, index) => (
+            <div key={`dup-${index}`} className="flex-shrink-0 w-full h-full">
+              <img
+                src={image.url}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
         </div>
-      </div>
-    </main>
+
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-screen flex items-center pt-24">
+          <div className="w-full">
+            <HeroContent />
+          </div>
+        </div>
+      </main>
+    </>
   );
 };
 

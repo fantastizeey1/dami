@@ -31,25 +31,25 @@ const Services = () => {
   ];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <div className="text-center mb-24">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
-          EMAIL MARKETING SERVICES
-        </h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
-          We've spent time understanding the psychology of selling to make
-          running your business your only focus.
-        </p>
-      </div>
+    <section className="w-full  px-4 sm:px-8 py-24  bg-brand-secondary">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-24">
+          <h2 className="h2 mb-4">EMAIL MARKETING SERVICES</h2>
+          <p className="body-text max-w-xl mx-auto ">
+            We've spent time understanding the psychology of selling to make
+            running your business your only focus.
+          </p>
+        </div>
 
-      <div className="space-y-32">
-        {services.map((service, index) => (
-          <ServiceSection
-            key={service.title}
-            service={service}
-            isReversed={index % 2 !== 0}
-          />
-        ))}
+        <div className="space-y-32">
+          {services.map((service, index) => (
+            <ServiceSection
+              key={service.title}
+              service={service}
+              isReversed={index % 2 !== 0}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,32 +1,39 @@
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import ContactForm from "../../ContactForm";
+import { Button } from "../../ui/Button";
 
 const HeroContent = () => {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <div className="w-full md:w-1/2">
-      <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
+    <div className="w-full text-center md:text-left">
+      {/* Heading */}
+      <h1 className="h1 text-brand-secondary max-w-3xl mx-auto md:mx-0">
         Build your{" "}
-        <span className="bg-gradient-to-r from-brand-maroon via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <span className="relative inline-block text-brand-primary">
           communication superpower
         </span>{" "}
         through email marketing
       </h1>
-      <p className="font-body text-xl text-gray-600 dark:text-gray-300 mb-8">
+
+      {/* Subtext */}
+      <p className="body-text text-brand-secondary max-w-2xl mx-auto md:mx-0 mt-6">
         Start sending emails to your list to boost your sales
       </p>
-      <div className="space-y-3">
-        <button
+
+      {/* CTA */}
+      <div className="mt-8 flex justify-center md:justify-start">
+        <Button
           onClick={() => setShowForm(true)}
-          className="group inline-flex items-center justify-center px-8 py-3 font-semibold text-white bg-gradient-to-r from-brand-maroon via-purple-600 to-pink-600 rounded-xl hover:opacity-90 transition-opacity"
+          className="group flex items-center gap-2"
         >
-          Let's Collaborate
-          <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-        </button>
+          Let’s Collaborate
+          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+        </Button>
       </div>
 
+      {/* Contact Form Modal */}
       {showForm && <ContactForm onClose={() => setShowForm(false)} />}
     </div>
   );

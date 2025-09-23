@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { testimonials } from "./testimonialData";
 import { NavigationButton } from "./NavigationButton";
 import { TestimonialContent } from "./TestimonialContent";
-import { TestimonialBackground } from "./TestimonialBackground";
+import SectionDivider from "../../ui/SectionDivider";
 
 const TestimonialSlider = () => {
   const [current, setCurrent] = useState(0);
@@ -31,9 +31,9 @@ const TestimonialSlider = () => {
   }, [next]);
 
   return (
-    <section className="relative bg-gray-100  dark:bg-gray-900 md:min-h-[500px] flex items-center px-12 overflow-hidden">
+    <section className="relative bg-brand-hover md:min-h-[500px] flex items-center px-12 overflow-hidden pb-[100px]">
       <NavigationButton direction="left" onClick={prev}>
-        <ArrowLeft className="w-6 h-6 dark:text-gray-100 text-gray-900" />
+        <ArrowLeft className="w-6 h-6 " />
       </NavigationButton>
 
       <div className="w-full py-5 md:py-20">
@@ -47,8 +47,9 @@ const TestimonialSlider = () => {
       </div>
 
       <NavigationButton direction="right" onClick={next}>
-        <ArrowRight className="w-6 h-6 dark:text-gray-100 text-gray-900" />
+        <ArrowRight className="w-6 h-6 " />
       </NavigationButton>
+      <SectionDivider color="#F5F5DC" direction="left" />
     </section>
   );
 };

@@ -4,23 +4,54 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      animation: {
-        "slide-up": "slideUp 15s linear infinite",
-        "slide-down": "slideDown 15s linear infinite",
-        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      fontFamily: {
+        sans: ["Quicksand", "sans-serif"], // default body + headings
       },
       colors: {
-        "brand-maroon": "#800020",
         brand: {
-          maroon: "#850000",
-          black: "#000000",
-          gray: "#4A4A4A",
+          primary: "#FF6F61",   // Peachy Coral
+          secondary: "#FFD166", // Golden Yellow
+          accent: "#06B6D4",    // Teal
+          hover: "#CDB4DB",     // Soft Lilac
+          neutral: "#F5F5DC",   // Sand
+          text: "#36454F",      // Charcoal Gray
         },
       },
-      fontFamily: {
-        display: ["Playfair Display", "serif"],
-        body: ["Lato", "sans-serif"],
+      screens: {
+        xs: "350px",
+        sm: "430px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1256px",
+        "2xl": "1440px",
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme("colors.brand.text"),
+            fontFamily: theme("fontFamily.sans").join(","),
+            h1: {
+              fontWeight: "700",
+              letterSpacing: "-0.02em",
+              color: theme("colors.brand.text"),
+            },
+            h2: {
+              fontWeight: "600",
+              letterSpacing: "-0.01em",
+              color: theme("colors.brand.text"),
+            },
+            h3: {
+              fontWeight: "600",
+              letterSpacing: "0",
+              color: theme("colors.brand.text"),
+            },
+            p: {
+              fontWeight: "400",
+              lineHeight: "1.6",
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],

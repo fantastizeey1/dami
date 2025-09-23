@@ -1,11 +1,7 @@
-import React from "react";
-
 export const TestimonialContent = ({ testimonial }) => {
   return (
-    <div className="relative z-10 max-w-4xl mx-auto flex flex-col justify-start md:text-start items-start px-4 text-justify">
-      <p className="dark:text-white text-slate-700 text-xl lg:text-4xl font-semibold mb-2 md:mb-12 leading-tight text-center">
-        {testimonial.quote}
-      </p>
+    <div className="relative z-10 max-w-3xl mx-auto flex flex-col justify-start md:text-start items-start px-4 text-justify">
+      <h3 className="h2   mb-4">{testimonial.quote}</h3>
 
       <div className="flex items-center text-start justify-start gap-4">
         <img
@@ -17,12 +13,8 @@ export const TestimonialContent = ({ testimonial }) => {
           }}
         />
         <div>
-          <p className="dark:text-white  text-slate-700font-medium">
-            {testimonial.name}
-          </p>
-          <p className="dark:text-gray-300 text-slate-600">
-            {testimonial.position}
-          </p>
+          <p className="body-text font-bold">{testimonial.name}</p>
+          <p className="body-text">{testimonial.position}</p>
         </div>
       </div>
     </div>

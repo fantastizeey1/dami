@@ -1,20 +1,16 @@
 import React from "react";
+import SketchCircle from "../../ui/SketchCircle";
 
 const CTAContent = () => {
   return (
     <div className="space-y-6 text-center md:text-left max-w-4xl">
       <div className="relative">
-        <h2 className="text-4xl md:text-7xl font-bold text-gray-900 dark:text-white leading-tight animate-fade-in">
-          Your most important asset is your{" "}
-          <span className="relative inline-block">
-            <span className="absolute -inset-1 w-full h-full bg-gradient-to-r from-brand-maroon to-pink-600 opacity-25 blur-lg animate-pulse"></span>
-            <span className="relative bg-gradient-to-r from-brand-maroon to-pink-600 bg-clip-text text-transparent">
-              Email List
-            </span>
-          </span>
+        <h2 className="h2 text-7xl leading-relaxed animate-fade-in">
+          Your most important asset is your
+          <SketchCircle>Email List</SketchCircle>
         </h2>
       </div>
-      <p className="text-2xl text-center text-gray-600 dark:text-gray-300 animate-slide-up-2">
+      <p className="h3  animate-slide-up-2">
         Let's make it count towards your bottom line
       </p>
     </div>

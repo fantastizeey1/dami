@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import IconWrapper from "../IconWrapper";
+import { Button } from "../../ui/Button";
 
 const ServiceSection = ({ service, isReversed }) => {
   const { title, description, Icon, image } = service;
@@ -42,18 +43,14 @@ const ServiceSection = ({ service, isReversed }) => {
     >
       <div className="flex-1 space-y-6 gap-3">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-900 transition-colors duration-300">
+          <div className="w-12 h-12 flex items-center justify-center rounded-xl ">
             <IconWrapper Icon={Icon} />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
-            {title}
-          </h3>
+          <h3 className="h3">{title}</h3>
         </div>
-        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
-          {description}
-        </p>
+        <p className="body-text">{description}</p>
         <a href="/learn" className="inline-block">
-          <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#850000] hover:bg-[#ac4949] text-white rounded-lg transition-all duration-300 transform hover:translate-x-1">
+          <Button className="">
             Learn More
             <svg
               className="w-4 h-4"
@@ -68,15 +65,17 @@ const ServiceSection = ({ service, isReversed }) => {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </button>
+          </Button>
         </a>
       </div>
 
-      <div className="flex-1">
-        <div className="image-container group">
-          <div className="image-wrapper">
-            <img src={image} alt={title} className="service-image" />
-          </div>
+      <div className="flex-1 image-container group">
+        <div className=" rounded-2xl  border-8 border-white max-w-full aspect-[16/9]">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover rounded-2xl"
+          />
         </div>
       </div>
     </div>
