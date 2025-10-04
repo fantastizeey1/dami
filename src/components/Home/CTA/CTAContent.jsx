@@ -3,11 +3,13 @@ import SketchCircle from "../../ui/SketchCircle";
 
 const CTAContent = () => {
   return (
-    <div className="space-y-6 text-center md:text-left max-w-4xl">
+    <div className="space-y-6 text-center md:mx-3 md:text-left max-w-4xl">
       <div className="relative">
         <h2 className="h2 text-7xl leading-relaxed animate-fade-in">
           Your most important asset is your
-          <SketchCircle>Email List</SketchCircle>
+          <span className="md:ml-12 lg:ml-9">
+            <SketchCircle>Email List</SketchCircle>
+          </span>
         </h2>
       </div>
       <p className="h3  animate-slide-up-2">

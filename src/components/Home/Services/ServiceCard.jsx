@@ -49,7 +49,7 @@ const ServiceSection = ({ service, isReversed }) => {
           <h3 className="h3">{title}</h3>
         </div>
         <p className="body-text">{description}</p>
-        <a href="/learn" className="inline-block">
+        {/* <a href="/learn" className="inline-block">
           <Button className="">
             Learn More
             <svg
@@ -66,7 +66,7 @@ const ServiceSection = ({ service, isReversed }) => {
               />
             </svg>
           </Button>
-        </a>
+        </a> */}
       </div>
 
       <div className="flex-1 image-container group">

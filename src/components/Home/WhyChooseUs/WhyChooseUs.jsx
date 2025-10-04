@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
         <div className="text-center mb-16">
           <h2 className="h2 mb-4">WHY CHOOSE US</h2>
           <p className="body-text max-w-3xl mx-auto">
-            We deliver results through personalized strategies and
+            We deliver results through personalised strategies and
             human-centered approach
           </p>
         </div>

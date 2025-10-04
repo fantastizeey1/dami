@@ -18,7 +18,7 @@ const HeroContent = () => {
       </h1>
 
       {/* Subtext */}
-      <p className="body-text text-brand-secondary max-w-2xl mx-auto md:mx-0 mt-6">
+      <p className="body-text md:text-[32px] text-brand-secondary max-w-3xl mx-auto md:mx-0 mt-6">
         Start sending emails to your list to boost your sales
       </p>
 

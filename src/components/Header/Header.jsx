@@ -24,8 +24,8 @@ const Header = () => {
       className={`fixed inset-x-0  top-0 z-50 transition-all duration-300 
       ${
         isScrolled
-          ? "bg-brand-accent/80 backdrop-blur-md shadow-md"
-          : "bg-brand-accent/50 backdrop-blur-sm"
+          ? "bg-brand-hover/80 backdrop-blur-md shadow-md"
+          : "bg-brand-hover/50 backdrop-blur-sm"
       }
       `}
     >
