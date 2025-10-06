@@ -39,13 +39,13 @@ const GrowthSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section className="py-20 bg-brand-primary border-t-8 border-white ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
             Growing your list = Direct revenue
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl  max-w-2xl mx-auto">
             Transform your email marketing strategy into a powerful revenue
             engine
           </p>

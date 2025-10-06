@@ -31,13 +31,13 @@ const values = [
 
 const AboutValue = () => {
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-20 lg:py-40 bg-brand-accent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 opacity-0 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
             Your Trusted Value Partner
           </h2>
-          <p className="text-2xl text-black/80 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-2xl max-w-2xl mx-auto">
             We're more than just a service provider - we're your strategic
             partner in achieving extraordinary marketing results.
           </p>

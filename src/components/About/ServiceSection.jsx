@@ -24,15 +24,18 @@ const ServiceSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-white dark:bg-gray-900">
+    <section
+      id="services"
+      className="py-20 lg:py-40 bg-brand-secondary border-t-8 border-white"
+    >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl bg-gray-50 dark:bg-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="p-8 rounded-2xl  hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2  border-black border-8"
             >
-              <div className="w-16 h-16 mb-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-400">
+              <div className="w-16 h-16 mb-6 rounded-full  flex items-center justify-center ">
                 {service.icon}
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">

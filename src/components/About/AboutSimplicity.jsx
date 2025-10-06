@@ -1,10 +1,10 @@
-import React from "react";
+import SectionDivider from "../ui/SectionDivider";
 
 const AboutSimplicity = () => {
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="relative py-20 lg:py-40 bg-brand-secondary">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:mb-20">
           <div className="lg:w-1/2">
             <img
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
@@ -40,6 +40,7 @@ const AboutSimplicity = () => {
           </div>
         </div>
       </div>
+      <SectionDivider direction="right" color="#06b6d4" />
     </section>
   );
 };

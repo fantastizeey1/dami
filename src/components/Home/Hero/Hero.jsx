@@ -1,5 +1,6 @@
 import React from "react";
 import HeroContent from "./HeroContent";
+import BackgroundSlider from "../../BackgroundSlider";
 
 const backgroundImages = [
   {
@@ -26,52 +27,17 @@ const backgroundImages = [
 
 const Hero = () => {
   return (
-    <>
-      <style>{`
-        @keyframes slideBackground {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-100%); }
-        }
-        .slide-background {
-          animation: slideBackground 40s linear infinite;
-        }
-      `}</style>
+    <main className="relative w-full min-h-screen overflow-hidden">
+      {/* Reusable Background Slider */}
+      <BackgroundSlider images={backgroundImages} duration={40} overlay />
 
-      <main className="relative w-full min-h-screen overflow-hidden">
-        {/* Fullscreen Background Slideshow */}
-        <div className="absolute inset-0 flex slide-background">
-          {backgroundImages.map((image, index) => (
-            <div key={index} className="flex-shrink-0 w-full h-full">
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-          {/* Duplicate for seamless loop */}
-          {backgroundImages.map((image, index) => (
-            <div key={`dup-${index}`} className="flex-shrink-0 w-full h-full">
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+      {/* Foreground content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-screen flex items-center pt-24">
+        <div className="w-full">
+          <HeroContent />
         </div>
-
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-screen flex items-center pt-24">
-          <div className="w-full">
-            <HeroContent />
-          </div>
-        </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 };
 
