@@ -4,7 +4,7 @@ const AboutSimplicity = () => {
   return (
     <section className="relative py-20 lg:py-40 bg-brand-secondary">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:mb-20">
+        <div className="flex flex-col lg:flex-row items-start gap-12 lg:mb-20">
           <div className="lg:w-1/2">
             <img
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
@@ -13,30 +13,19 @@ const AboutSimplicity = () => {
             />
           </div>
           <div className="lg:w-1/2">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+            <h2 className="h2 font-bold mb-6 ">
               Email Marketing Doesn't Have to Be Complex
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              We understand that keeping up with marketing trends and expert
-              advice can be overwhelming. That's why we're here to simplify the
-              process for you.
+            <p className="text-xl leading-normal  mb-6">
+              It takes time and effort to understand marketing lingo. We get it.
+              Targeting your audience through several marketing channels can be
+              exhausting. Trying to stay on top of everything ‘experts’ advise
+              can quickly become overwhelming. You don’t have to experience
+              marketing burnout now that you’ve found us. We take care of your
+              emails, lead magnets and landing pages, the ingredients to boost
+              your profits. Take the guesswork out of your marketing and watch
+              your email list grow faster.
             </p>
-            <ul className="space-y-4">
-              {[
-                "Simplified marketing strategies",
-                "Expert handling of emails and lead magnets",
-                "Professional landing page creation",
-                "Proven methods to boost profits",
-                "Guided approach to list growth",
-              ].map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#850000] rounded-full"></span>
-                  <span className="text-gray-700 dark:text-gray-300">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>

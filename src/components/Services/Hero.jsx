@@ -1,30 +1,60 @@
 import React from "react";
 import { useInView } from "./useInView";
 import { ArrowRight } from "lucide-react";
+import { Button } from "../ui/Button";
+import BackgroundSlider from "../BackgroundSlider";
+
+const backgroundImages = [
+  {
+    url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop",
+    alt: "Modern Workspace with Laptop",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop",
+    alt: "Team Collaboration",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=1080&fit=crop",
+    alt: "Analytics Dashboard",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop",
+    alt: "Startup Team Meeting",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop",
+    alt: "Digital Marketing Presentation",
+  },
+];
 
 const Hero = () => {
   const [ref, isVisible] = useInView();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
+      <BackgroundSlider
+        images={backgroundImages}
+        duration={60}
+        overlay={false}
+      />
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-white dark:bg-gray-900"></div>
+        <div className="absolute inset-0 bg-white/40 "></div>
       </div>
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#850000] via-[#f3097e] to-[#850000]  animate-fade-in">
-            Copywriting Is Our Business.
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-screen flex items-center pt-24">
+        <div className="max-w-5xl ">
+          <h1 className="h1 font-bold mb-8 pb-4 bg-clip-text   animate-fade-in">
+            Words that sparkle, <br />
+            trategy that sticks
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-12 animate-fade-in-delay">
-            Our company fully manages your email list so that you can focus on
-            the nitty-gritty of your business.
+          <p className="text-xl md:text-2xl  mb-12 animate-fade-in-delay">
+            We write your emails so that you can focus on the nitty-gritty of
+            your business.
           </p>
-          <a
-            href="#services"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#850000] text-white rounded-full  transition-all transform hover:scale-105 animate-bounce-subtle"
-          >
-            Let’s Collaborate
-            <ArrowRight className="w-5 h-5" />
+          <a href="#services">
+            <Button className="animate-bounce-subtle px-8 py-4" size="lg">
+              Let’s Collaborate
+              <ArrowRight className="w-5 h-5" />
+            </Button>
           </a>
         </div>
       </div>

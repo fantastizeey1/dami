@@ -30,11 +30,9 @@ const AboutPartner = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="text-center p-6 rounded-xl bg-gray-50 dark:bg-gray-700"
+                  className="text-center p-6 rounded-xl bg-gray-50"
                 >
-                  <div className="text-3xl font-bold text-[#850000] dark:text-[#a03434]">
-                    {item.stat}
-                  </div>
+                  <div className="text-3xl font-bold ">{item.stat}</div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">
                     {item.label}
                   </div>

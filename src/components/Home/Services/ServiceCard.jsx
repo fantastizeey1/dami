@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import IconWrapper from "../IconWrapper";
-import { Button } from "../../ui/Button";
 
 const ServiceSection = ({ service, isReversed }) => {
   const { title, description, Icon, image } = service;

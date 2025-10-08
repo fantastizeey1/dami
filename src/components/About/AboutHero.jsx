@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import BackgroundSlider from "../BackgroundSlider";
 import SectionDivider from "../ui/SectionDivider";
+import { Button } from "../ui/Button";
 
 const backgroundImages = [
   {
@@ -28,30 +29,23 @@ const backgroundImages = [
 const AboutHero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
-      <BackgroundSlider
-        images={backgroundImages}
-        duration={60}
-        overlay={false}
-      />
+      <BackgroundSlider images={backgroundImages} duration={60} overlay />
 
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-white/40 "></div>
-      </div>
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="lg:max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-clip-text ">
-            Email Always Wins the Day
-          </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl mb-12 ">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-screen flex items-center pt-24 ">
+        <div className="  md:max-w-3xl">
+          <h1 className="h1   md:mx-0 mb-9">Email Always Wins the Day</h1>
+          <p className="body-text text-brand-secondary md:text-[32px] mb-8 leading-normal">
             We prioritise small and medium-sized businesses interested in
-            building trust through email marketing excellence.
+            building trust through email.
           </p>
-          <a
-            href="#services"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-brand-accent rounded-full  transition-all transform hover:scale-105 animate-bounce-subtle"
-          >
-            Discover How
-            <ArrowRight className="w-5 h-5" />
+          <p className="body-text text-brand-secondary  md:text-[32px] mb-12 leading-normal">
+            We get excited by all things copywriting, turning words to wonder.
+          </p>
+          <a href="#services">
+            <Button className="animate-bounce-subtle px-8 py-4" size="lg">
+              Discover How
+              <ArrowRight className="w-5 h-5" />
+            </Button>
           </a>
         </div>
       </div>

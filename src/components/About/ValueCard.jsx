@@ -21,7 +21,7 @@ const ValueCard = ({ icon: Icon, title, description, imageSrc }) => {
         <h3 className="text-2xl font-bold mb-4 text-white transform transition-transform duration-500 group-hover:-translate-y-2">
           {title}
         </h3>
-        <p className="text-gray-200 transform transition-transform duration-500 group-hover:-translate-y-2">
+        <p className="text-gray-200 text-body transform transition-transform duration-500 group-hover:-translate-y-2">
           {description}
         </p>
       </div>
