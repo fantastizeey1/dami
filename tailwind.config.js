@@ -1,3 +1,5 @@
+import { color } from 'framer-motion';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
@@ -48,6 +50,7 @@ export default {
             p: {
               fontWeight: "400",
               lineHeight: "1.6",
+              color: theme("colors.brand.text"),
             },
           },
         },

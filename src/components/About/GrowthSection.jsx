@@ -1,6 +1,5 @@
-import React from "react";
 import GrowthMessage from "./GrowthMessage";
-import { LineChart, Users, Target, Briefcase } from "lucide-react";
+import { LineChart, Users, Compass, Briefcase } from "lucide-react";
 
 const GrowthSection = () => {
   const messages = [
@@ -21,7 +20,7 @@ const GrowthSection = () => {
         "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
     },
     {
-      icon: <Target className="w-8 h-8 text-white" />,
+      icon: <Compass className="w-8 h-8 text-white" />,
       title: "Your Next Strategic Step",
       description:
         "We help you understand why email marketing is the next most sensible step if you are really serious about growing your business.",
@@ -39,16 +38,16 @@ const GrowthSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-brand-primary border-t-8 border-white ">
+    <section className="py-20 bg-brand-primary  ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
             Growing your list = Direct revenue
           </h2>
-          <p className="text-xl  max-w-2xl mx-auto">
+          {/* <p className="text-xl  max-w-2xl mx-auto">
             Transform your email marketing strategy into a powerful revenue
             engine
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">

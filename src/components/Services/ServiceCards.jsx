@@ -31,7 +31,7 @@ const ServiceCards = () => {
     },
   ];
   return (
-    <section className="w-full  px-4 sm:px-8 py-24  bg-brand-secondary">
+    <section className="w-full  px-4 sm:px-8 py-24  bg-brand-primary">
       <div className="max-w-7xl mx-auto">
         <div className="space-y-32">
           {services.map((service, index) => (

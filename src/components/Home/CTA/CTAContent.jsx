@@ -1,5 +1,6 @@
 import React from "react";
 import SketchCircle from "../../ui/SketchCircle";
+import SketchUnderline from "../../ui/SketchUnderline";
 
 const CTAContent = () => {
   return (
@@ -8,7 +9,7 @@ const CTAContent = () => {
         <h2 className="h2 text-7xl leading-relaxed animate-fade-in">
           Your most important asset is your
           <span className="md:ml-12 lg:ml-9">
-            <SketchCircle>Email List</SketchCircle>
+            <SketchUnderline color="#06b6d4">Email List</SketchUnderline>
           </span>
         </h2>
       </div>

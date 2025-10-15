@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import BackgroundSlider from "../BackgroundSlider";
-import SectionDivider from "../ui/SectionDivider";
 import { Button } from "../ui/Button";
 
 const backgroundImages = [
@@ -28,17 +27,17 @@ const backgroundImages = [
 
 const AboutHero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
-      <BackgroundSlider images={backgroundImages} duration={60} overlay />
-
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-secondary">
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-screen flex items-center pt-24 ">
         <div className="  md:max-w-3xl">
-          <h1 className="h1   md:mx-0 mb-9">Email Always Wins the Day</h1>
-          <p className="body-text text-brand-secondary md:text-[32px] mb-8 leading-normal">
+          <h1 className="h1 text-brand-text  md:mx-0 mb-9">
+            Email Always Wins the Day
+          </h1>
+          <p className="body-text  md:text-[32px] mb-8 leading-normal">
             We prioritise small and medium-sized businesses interested in
             building trust through email.
           </p>
-          <p className="body-text text-brand-secondary  md:text-[32px] mb-12 leading-normal">
+          <p className="body-text   md:text-[32px] mb-12 leading-normal">
             We get excited by all things copywriting, turning words to wonder.
           </p>
           <a href="#services">

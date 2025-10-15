@@ -1,5 +1,3 @@
-import SectionDivider from "../ui/SectionDivider";
-
 const AboutSimplicity = () => {
   return (
     <section className="relative py-20 lg:py-40 bg-brand-secondary">
@@ -29,7 +27,6 @@ const AboutSimplicity = () => {
           </div>
         </div>
       </div>
-      <SectionDivider direction="right" color="#06b6d4" />
     </section>
   );
 };

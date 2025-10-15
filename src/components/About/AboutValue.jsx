@@ -1,5 +1,5 @@
 import React from "react";
-import { Shield, Users, Target } from "lucide-react";
+import { Shield, Users, CheckCircle } from "lucide-react";
 import ValueCard from "./ValueCard";
 
 const values = [
@@ -20,7 +20,7 @@ const values = [
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
   },
   {
-    icon: Target,
+    icon: CheckCircle,
     title: "Results Driven",
     description:
       "We aim for extraordinary results 100% of the time, and we value our clients. We groom our minds for success and we are ready to help leverage your business, copy by copy..",
