@@ -4,6 +4,7 @@ import { testimonials } from "./testimonialData";
 import { NavigationButton } from "./NavigationButton";
 import { TestimonialContent } from "./TestimonialContent";
 import SectionDivider from "../../ui/SectionDivider";
+import SectionFade from "../../ui/SectionFade";
 
 const TestimonialSlider = () => {
   const [current, setCurrent] = useState(0);
@@ -49,7 +50,14 @@ const TestimonialSlider = () => {
       <NavigationButton direction="right" onClick={next}>
         <ArrowRight className="w-6 h-6 " />
       </NavigationButton>
-      <SectionDivider color="#F5F5DC" direction="left" />
+
+      <SectionFade
+        fromColor="#CDB4DB"
+        toColor="#F5F5DC"
+        height={150}
+        curve="linear"
+        className="absolute -bottom-[0] left-0 z-10"
+      />
     </section>
   );
 };

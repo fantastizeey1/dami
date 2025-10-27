@@ -1,5 +1,6 @@
 import { Target, Users, Brain } from "lucide-react";
 import WhyChooseUsCard from "./WhyChooseUsCard";
+import SectionFade from "../../ui/SectionFade";
 
 const WhyChooseUs = () => {
   const benefits = [
@@ -24,7 +25,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="w-full  border-t-8 border-white px-8 py-32 bg-brand-accent ">
+    <section className="w-full  sm:px-8 md:py-24 relative lg:py-56 bg-brand-accent ">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="h2 mb-4">WHY CHOOSE US</h2>
@@ -46,6 +47,13 @@ const WhyChooseUs = () => {
           ))}
         </div>
       </div>
+      <SectionFade
+        fromColor="#06B6D4"
+        toColor="#CDB4DB"
+        height={150}
+        curve="smooth"
+        className="absolute -bottom-[0] left-0"
+      />
     </section>
   );
 };

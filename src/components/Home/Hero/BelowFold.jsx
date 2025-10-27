@@ -1,12 +1,11 @@
-import React from "react";
 import { Mail, TrendingUp, Download } from "lucide-react";
 import { Button } from "../../ui/Button";
-import SectionDivider from "../../ui/SectionDivider";
 import SketchCircle from "../../ui/SketchCircle";
+import SectionFade from "../../ui/SectionFade";
 
 const BelowFold = () => {
   return (
-    <section className="relative w-full px-8 py-40 bg-brand-primary border-t-8 border-white ">
+    <section className="relative w-full px-8 py-56 bg-brand-primary  ">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Left side with image */}
         <div className="relative">
@@ -35,7 +34,7 @@ const BelowFold = () => {
           {/* Download CTA */}
           <div className="p-6 rounded-xl bg-white/10">
             <div className="flex items-center gap-4 mb-4">
-              <Download className="w-6 h-6 text-brand-maroon dark:text-pink-500" />
+              <Download className="w-6 h-6 " />
               <h3 className="text-xl font-semibold">
                 Download my cheat sheet to email marketing
               </h3>
@@ -71,9 +70,13 @@ const BelowFold = () => {
           </div>
         </div>
       </div>
-
-      {/* Slanted white border + section divider */}
-      <SectionDivider />
+      <SectionFade
+        fromColor="#FF6F61"
+        toColor="#FFD166"
+        height={150}
+        curve="smooth"
+        className="absolute -bottom-[2%] left-0"
+      />
     </section>
   );
 };

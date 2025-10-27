@@ -1,6 +1,7 @@
 import React from "react";
 import { PenTool, Magnet, MailCheck } from "lucide-react";
 import ServiceSection from "./ServiceCard";
+import SectionFade from "../../ui/SectionFade";
 
 const Services = () => {
   const services = [
@@ -31,7 +32,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="w-full  px-4 sm:px-8 py-24  bg-brand-secondary">
+    <section className="w-full relative px-4 sm:px-8 md:py-24 lg:py-56  bg-brand-secondary">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
           <h2 className="h2 mb-4">EMAIL MARKETING SERVICES</h2>
@@ -51,6 +52,13 @@ const Services = () => {
           ))}
         </div>
       </div>
+      <SectionFade
+        fromColor="#FFD166"
+        toColor="#06B6D4"
+        height={150}
+        curve="smooth"
+        className="absolute bottom-[0] left-0"
+      />
     </section>
   );
 };
