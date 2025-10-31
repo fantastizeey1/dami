@@ -25,8 +25,8 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="w-full  sm:px-8 md:py-24 relative lg:py-56 bg-brand-accent ">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full  sm:px-8 pb-40 relative lg:py-56 bg-brand-accent ">
+      <div className="max-w-7xl mx-[10px] md:mx-auto">
         <div className="text-center mb-16">
           <h2 className="h2 mb-4">WHY CHOOSE US</h2>
           <p className="body-text max-w-3xl mx-auto">
@@ -35,7 +35,7 @@ const WhyChooseUs = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex mx-[10px] flex-col md:flex-row gap-8">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex-1 min-w-0">
               <WhyChooseUsCard

@@ -32,7 +32,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="w-full relative px-4 sm:px-8 md:py-24 lg:py-56  bg-brand-secondary">
+    <section className="w-full relative px-4 sm:px-8 pt-16 pb-36 lg:py-56  bg-brand-secondary">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
           <h2 className="h2 mb-4">EMAIL MARKETING SERVICES</h2>

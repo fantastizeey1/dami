@@ -2,6 +2,7 @@ import ServiceSection from "../Home/Services/ServiceCard";
 import { PenTool } from "lucide-react";
 import { Magnet } from "lucide-react";
 import { MailCheck } from "lucide-react";
+import SectionFade from "../ui/SectionFade";
 
 const ServiceCards = () => {
   const services = [
@@ -31,7 +32,7 @@ const ServiceCards = () => {
     },
   ];
   return (
-    <section className="w-full  px-4 sm:px-8 py-24  bg-brand-primary">
+    <section className=" relative w-full  px-4 sm:px-8 py-56  bg-brand-primary">
       <div className="max-w-7xl mx-auto">
         <div className="space-y-32">
           {services.map((service, index) => (
@@ -43,6 +44,13 @@ const ServiceCards = () => {
           ))}
         </div>
       </div>
+      <SectionFade
+        fromColor="#FF6F61"
+        toColor="#F5F5DC"
+        height={150}
+        curve="linear"
+        className="absolute -bottom-[1px] left-0 "
+      />
     </section>
   );
 };

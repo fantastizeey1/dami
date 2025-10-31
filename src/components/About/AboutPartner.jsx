@@ -1,6 +1,8 @@
+import SectionFade from "../ui/SectionFade";
+
 const AboutPartner = () => {
   return (
-    <section className="py-20 lg:py-40 bg-brand-hover ">
+    <section className="relative py-32 lg:py-56 bg-brand-hover ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
           <div className="lg:w-1/2">
@@ -40,6 +42,13 @@ const AboutPartner = () => {
           </div>
         </div>
       </div>
+      <SectionFade
+        fromColor="#CDB4DB"
+        toColor="#F5F5DC"
+        height={150}
+        curve="linear"
+        className="absolute -bottom-[0] left-0 z-10"
+      />
     </section>
   );
 };

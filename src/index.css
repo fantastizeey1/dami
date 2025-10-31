@@ -7,11 +7,11 @@
   /* h1 */
   .h1 {
     @apply font-sans font-bold text-brand-primary;
-    @apply text-3xl leading-tight tracking-tight; /* mobile */
+    @apply text-6xl leading-tight tracking-tight; /* mobile */
   }
   @screen sm {
     .h1 {
-      @apply text-4xl leading-snug;
+      @apply text-5xl leading-snug;
     }
   }
   @screen lg {

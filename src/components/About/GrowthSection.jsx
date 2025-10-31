@@ -1,3 +1,4 @@
+import SectionFade from "../ui/SectionFade";
 import GrowthMessage from "./GrowthMessage";
 import { LineChart, Users, Compass, Briefcase } from "lucide-react";
 
@@ -38,7 +39,7 @@ const GrowthSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-brand-primary  ">
+    <section className=" relative py-40 bg-brand-primary  ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
@@ -56,6 +57,13 @@ const GrowthSection = () => {
           ))}
         </div>
       </div>
+      <SectionFade
+        fromColor="#FF6F61"
+        toColor="#FFD166"
+        height={150}
+        curve="linear"
+        className="absolute -bottom-[0] left-0 "
+      />
     </section>
   );
 };

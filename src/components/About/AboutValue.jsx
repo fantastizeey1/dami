@@ -1,6 +1,7 @@
 import React from "react";
 import { Shield, Users, CheckCircle } from "lucide-react";
 import ValueCard from "./ValueCard";
+import SectionFade from "../ui/SectionFade";
 
 const values = [
   {
@@ -31,7 +32,7 @@ const values = [
 
 const AboutValue = () => {
   return (
-    <section className="py-20 lg:py-40 bg-brand-accent">
+    <section className="relative py-20 lg:py-40 bg-brand-accent -z-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 opacity-0 animate-fade-in">
           <h2 className="h2 font-bold mb-6 ">Your Trusted Value Partner</h2>
@@ -55,6 +56,13 @@ const AboutValue = () => {
           ))}
         </div>
       </div>
+      <SectionFade
+        fromColor="#06B6D4"
+        toColor="#CDB4DB"
+        height={150}
+        curve="linear"
+        className="absolute -bottom-[0] left-0 -z-10"
+      />
     </section>
   );
 };

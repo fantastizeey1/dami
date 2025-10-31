@@ -9,11 +9,11 @@ const HeroContent = () => {
   return (
     <div className="w-full text-center md:text-left">
       {/* Heading */}
-      <h1 className="h1 text-brand-secondary max-w-3xl mx-auto md:mx-0">
-        Build your{" "}
-        <span className="relative inline-block text-brand-primary">
+      <h1 className="h1 text-[50px] md:text-[60px] text-brand-secondary max-w-3xl mx-auto md:mx-0">
+        Build your
+        <span className="relative inline-block mx-auto text-brand-primary">
           communication superpower
-        </span>{" "}
+        </span>
         through email marketing
       </h1>
 
@@ -26,7 +26,7 @@ const HeroContent = () => {
       <div className="mt-8 flex justify-center md:justify-start">
         <Button
           onClick={() => setShowForm(true)}
-          className="group flex items-center gap-2"
+          className="group flex items-center gap-2 md:px-6 md:py-4 px-4 py-3 text-lg md:text-xl bg-brand-primary text-white hover:bg-brand-hover transition"
         >
           Let’s Collaborate
           <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

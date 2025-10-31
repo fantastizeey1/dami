@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import BackgroundSlider from "../BackgroundSlider";
 import { Button } from "../ui/Button";
+import SectionFade from "../ui/SectionFade";
 
 const backgroundImages = [
   {
@@ -48,6 +48,13 @@ const AboutHero = () => {
           </a>
         </div>
       </div>
+      <SectionFade
+        fromColor="#FFD166"
+        toColor="#FF6F61"
+        height={150}
+        curve="linear"
+        className="absolute -bottom-[0] left-0 "
+      />
     </section>
   );
 };

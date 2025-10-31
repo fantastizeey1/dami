@@ -32,7 +32,7 @@ const TestimonialSlider = () => {
   }, [next]);
 
   return (
-    <section className="relative bg-brand-hover md:min-h-[500px] flex items-center px-12 overflow-hidden pb-[100px]">
+    <section className="relative bg-brand-hover md:min-h-[500px] flex items-center px-12 overflow-hidden pb-40">
       <NavigationButton direction="left" onClick={prev}>
         <ArrowLeft className="w-6 h-6 " />
       </NavigationButton>

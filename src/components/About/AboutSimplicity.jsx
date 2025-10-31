@@ -1,6 +1,8 @@
+import SectionFade from "../ui/SectionFade";
+
 const AboutSimplicity = () => {
   return (
-    <section className="relative py-20 lg:py-40 bg-brand-secondary">
+    <section className="relative py-32 lg:py-40 bg-brand-secondary">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:mb-20">
           <div className="lg:w-1/2">
@@ -27,6 +29,13 @@ const AboutSimplicity = () => {
           </div>
         </div>
       </div>
+      <SectionFade
+        fromColor="#FFD166"
+        toColor="#06B6D4"
+        height={150}
+        curve="linear"
+        className="absolute -bottom-[0] left-0 "
+      />
     </section>
   );
 };

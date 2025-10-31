@@ -1,6 +1,7 @@
 import { useInView } from "./useInView";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/Button";
+import SectionFade from "../ui/SectionFade";
 
 const Hero = () => {
   const [ref, isVisible] = useInView();
@@ -13,7 +14,7 @@ const Hero = () => {
             Words that sparkle, <br />
             Strategy that sticks
           </h1>
-          <p className="text-body text-brand-text md:text-2xl  mb-12 animate-fade-in-delay">
+          <p className="body-text text-brand-text md:text-2xl  mb-12 animate-fade-in-delay">
             We write your emails so that you can focus on the nitty-gritty of
             your business.
           </p>
@@ -25,6 +26,13 @@ const Hero = () => {
           </a>
         </div>
       </div>
+      <SectionFade
+        fromColor="#FFD166"
+        toColor="#FF6F61"
+        height={150}
+        curve="linear"
+        className="absolute -bottom-[5px] left-0 "
+      />
     </section>
   );
 };
