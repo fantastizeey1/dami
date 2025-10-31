@@ -72,7 +72,7 @@ const BelowFold = () => {
       </div>
       <SectionFade
         fromColor="#FF6F61"
-        toColor="#FFD166"
+        toColor="#06B6D4"
         height={150}
         curve="smooth"
         className="absolute -bottom-[2%] left-0"

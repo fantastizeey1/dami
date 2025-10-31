@@ -11,7 +11,6 @@ const Home = () => {
     <div>
       <Hero />
       <BelowFold />
-      <Services />
       <WhyChooseUs />
       <TestimonialSlider />
       <EmailCTA />

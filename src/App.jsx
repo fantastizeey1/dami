@@ -4,17 +4,20 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import Header from "./components/Header/Header";
-import About from "./components/About/About";
-import Home from "./components/Home/Home";
-import Services from "./components/Services/Services";
-import NotFound from "./components/NotFound";
-import PostList from "./components/Blog/PostList";
-import PostDetail from "./components/Blog/PostDetail";
+import { lazy, Suspense, useEffect } from "react";
 import { FormProvider } from "./FormProvider";
-import Community from "./components/Community";
-import Comingsoon from "./components/Comingsoon/Comingsoon";
 import ScrollToTop from "./components/ScrollToTop";
+
+// Lazy load pages for performance
+const Header = lazy(() => import("./components/Header/Header"));
+const About = lazy(() => import("./components/About/About"));
+const Home = lazy(() => import("./components/Home/Home"));
+const Services = lazy(() => import("./components/Services/Services"));
+const NotFound = lazy(() => import("./components/NotFound"));
+const PostList = lazy(() => import("./components/Blog/PostList"));
+const PostDetail = lazy(() => import("./components/Blog/PostDetail"));
+const Community = lazy(() => import("./components/Community"));
+const Comingsoon = lazy(() => import("./components/Comingsoon/Comingsoon"));
 
 function App() {
   return (
@@ -29,23 +32,43 @@ function App() {
 function AppContent() {
   const location = useLocation();
 
+  // Hide header on selected routes (e.g. full-screen landing pages)
+  const hideHeaderOn = ["/learn"];
+  const shouldShowHeader = !hideHeaderOn.includes(location.pathname);
+
+  // Smooth scroll & dynamic page titles
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    const pageTitles = {
+      "/": "InkyRepertoire | Creative Space for Stories & Ideas",
+      "/about-us": "About Us | InkyRepertoire",
+      "/services": "Our Services | InkyRepertoire",
+      "/community": "Community | InkyRepertoire",
+      "/learn": "Learning Hub | InkyRepertoire",
+    };
+    document.title = pageTitles[location.pathname] || "InkyRepertoire";
+  }, [location.pathname]);
+
   return (
-    <main className={`max-w-full font-sans overflow-x-hidden `}>
-      {/* Conditionally render Header */}
-      {location.pathname !== "/" && <Header />}
+    <main className="max-w-full font-sans overflow-x-hidden">
+      <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+        {/* Conditionally render Header */}
+        {shouldShowHeader && <Header />}
 
-      <Routes>
-        <Route path="/" element={<Comingsoon />} />
-        <Route path="/work" element={<Home />} />
-        <Route path="/about-us" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/learn" element={<PostList />} />
-        <Route path="/post/:slug" element={<PostDetail />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="*" element={<NotFound />} /> {/* Fallback route */}
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/learn" element={<Comingsoon />} />
+          {/* <Route path="/learn" element={<PostList />} /> */}
+          <Route path="/post/:slug" element={<PostDetail />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
 
-      {/* Scroll-to-Top and Theme Toggle */}
+      {/* Smooth scroll-to-top */}
       <ScrollToTop />
     </main>
   );
