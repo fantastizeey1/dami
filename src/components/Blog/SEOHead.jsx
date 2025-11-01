@@ -1,47 +1,59 @@
-import React from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import React, { useEffect } from "react";
 
-const SEOHead = ({ title, description, keywords, url, image }) => (
-  <HelmetProvider>
-    <Helmet>
-      <title>{title || "Blog - Learn Email Marketing"}</title>
-      <meta
-        name="description"
-        content={description || "Free resource library for email marketing"}
-      />
-      <meta
-        name="keywords"
-        content={keywords || "email marketing, tutorials, guides"}
-      />
+const SEOHead = ({ title, description, keywords, url, image }) => {
+  useEffect(() => {
+    // Update the document title
+    document.title = title || "Blog - Learn Email Marketing";
 
-      {/* Open Graph */}
-      <meta
-        property="og:title"
-        content={title || "Blog - Learn Email Marketing"}
-      />
-      <meta
-        property="og:description"
-        content={description || "Free resource library for email marketing"}
-      />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={url || window.location.href} />
-      {image && <meta property="og:image" content={image} />}
+    // Helper to create/update meta tags dynamically
+    const updateMeta = (name, content, attr = "name") => {
+      let element = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attr, name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute("content", content);
+    };
 
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:title"
-        content={title || "Blog - Learn Email Marketing"}
-      />
-      <meta
-        name="twitter:description"
-        content={description || "Free resource library for email marketing"}
-      />
-      {image && <meta name="twitter:image" content={image} />}
+    // Standard meta tags
+    updateMeta(
+      "description",
+      description || "Free resource library for email marketing"
+    );
+    updateMeta("keywords", keywords || "email marketing, tutorials, guides");
 
-      <link rel="canonical" href={url || window.location.href} />
-    </Helmet>
-  </HelmetProvider>
-);
+    // Open Graph tags
+    updateMeta("og:title", title || "Blog - Learn Email Marketing", "property");
+    updateMeta(
+      "og:description",
+      description || "Free resource library for email marketing",
+      "property"
+    );
+    updateMeta("og:type", "website", "property");
+    updateMeta("og:url", url || window.location.href, "property");
+    if (image) updateMeta("og:image", image, "property");
+
+    // Twitter Card tags
+    updateMeta("twitter:card", "summary_large_image");
+    updateMeta("twitter:title", title || "Blog - Learn Email Marketing");
+    updateMeta(
+      "twitter:description",
+      description || "Free resource library for email marketing"
+    );
+    if (image) updateMeta("twitter:image", image);
+
+    // Canonical link
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", url || window.location.href);
+  }, [title, description, keywords, url, image]);
+
+  return null; // This component only updates the head
+};
 
 export default SEOHead;
