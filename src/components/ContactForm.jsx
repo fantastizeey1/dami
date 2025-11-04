@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { X, ArrowRight, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Button } from "./ui/Button";
 
 const ContactForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -183,7 +184,7 @@ const ContactForm = ({ onClose }) => {
       >
         <motion.div
           variants={formVariants}
-          className="bg-white dark:bg-gray-800 rounded-xl p-6 w-full max-w-lg relative shadow-xl"
+          className="bg-white h-[95%] rounded-xl px-6 py-2 w-full max-w-lg relative shadow-xl"
           role="dialog"
           aria-labelledby="contact-form-title"
         >
@@ -229,10 +230,10 @@ const ContactForm = ({ onClose }) => {
             name="contact"
             method="POST"
             data-netlify="true"
-            className="space-y-6"
+            className="space-y-3 2xl:space-y-6"
           >
             <input type="hidden" name="form-name" value="contact" />
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 xl:gap-6">
               <div>
                 <label htmlFor="name" className={labelClassName}>
                   Name {requiredIndicator}
@@ -352,7 +353,7 @@ const ContactForm = ({ onClose }) => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows="4"
+                rows="3"
                 className={inputClassName}
                 required
                 aria-required="true"
@@ -368,11 +369,7 @@ const ContactForm = ({ onClose }) => {
               )}
             </div>
 
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full group inline-flex items-center justify-center px-8 py-3 font-semibold text-white bg-gradient-to-r from-brand-maroon via-purple-600 to-pink-600 rounded-xl hover:opacity-90 focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 focus:outline-none transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
+            <Button type="submit" disabled={isLoading} className="">
               {isLoading ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
               ) : (
@@ -381,7 +378,7 @@ const ContactForm = ({ onClose }) => {
                   <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                 </>
               )}
-            </button>
+            </Button>
             {submitStatus === "success" && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
