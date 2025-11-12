@@ -4,24 +4,20 @@ import BackgroundSlider from "../../BackgroundSlider";
 
 const backgroundImages = [
   {
-    url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop",
+    url: "/dammy1.jpg",
     alt: "Modern Workspace with Laptop",
   },
   {
-    url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop",
+    url: "/dammy2.png",
     alt: "Team Collaboration",
   },
   {
-    url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&h=1080&fit=crop",
+    url: "/dammy3.jpg",
     alt: "Analytics Dashboard",
   },
   {
-    url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop",
+    url: "/dammy4.jpg",
     alt: "Startup Team Meeting",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop",
-    alt: "Digital Marketing Presentation",
   },
 ];
 
