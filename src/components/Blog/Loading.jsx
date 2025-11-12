@@ -2,7 +2,7 @@ import React from "react";
 
 function Loading() {
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center bg-white dark:bg-gray-900 z-50">
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-white dark:bg-gray-900 z-40">
       {/* Animated spinner */}
       <div className="w-20 h-20 border-4 border-blue-500 dark:border-blue-400 border-t-transparent rounded-full animate-spin mb-6"></div>
 

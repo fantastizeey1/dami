@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import ContactForm from "../../ContactForm";
 import { Button } from "../../ui/Button";
+import CalendlyPopup from "../../CalendlyPopup";
 
 const HeroContent = () => {
   const [showForm, setShowForm] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   return (
-    <div className="w-full text-center md:text-left">
+    <div className="w-full relative text-center md:text-left">
       {/* Heading */}
       <h1 className="h1 text-[50px] md:text-[60px] text-brand-secondary max-w-3xl mx-auto md:mx-0">
         Build your
@@ -25,12 +27,14 @@ const HeroContent = () => {
       {/* CTA */}
       <div className="mt-8 flex justify-center md:justify-start">
         <Button
-          onClick={() => setShowForm(true)}
+          onClick={() => setShowPopup(true)}
           className="group flex items-center gap-2 md:px-6 md:py-4 px-4 py-3 text-lg md:text-xl bg-brand-primary text-white hover:bg-brand-hover transition"
         >
           Let’s Collaborate
           <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
         </Button>
+
+        <CalendlyPopup open={showPopup} onClose={() => setShowPopup(false)} />
       </div>
 
       {/* Contact Form Modal */}
