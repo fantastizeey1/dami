@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/Button";
 import SectionFade from "../ui/SectionFade";
+import CalendlyPopup from "../CalendlyPopup";
+import { useState } from "react";
 
 const backgroundImages = [
   {
@@ -26,6 +28,8 @@ const backgroundImages = [
 ];
 
 const AboutHero = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-secondary">
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 min-h-screen flex items-center pt-24 ">
@@ -40,12 +44,20 @@ const AboutHero = () => {
           <p className="body-text   md:text-[32px] mb-12 leading-normal">
             We get excited by all things copywriting, turning words to wonder.
           </p>
-          <a href="#services">
-            <Button className="animate-bounce-subtle px-8 py-4" size="lg">
-              Discover How
-              <ArrowRight className="w-5 h-5" />
+          <div className="mt-8 flex justify-center md:justify-start">
+            <Button
+              onClick={() => setShowPopup(true)}
+              className="group flex items-center gap-2 md:px-6 md:py-4 px-4 py-3 text-lg md:text-xl bg-brand-primary text-white hover:bg-brand-hover transition"
+            >
+              Let’s Collaborate
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
-          </a>
+
+            <CalendlyPopup
+              open={showPopup}
+              onClose={() => setShowPopup(false)}
+            />
+          </div>
         </div>
       </div>
       <SectionFade
