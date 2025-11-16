@@ -1,49 +1,58 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { navItems } from "./navigation-data";
 import Logo from "./Logo";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import MobileMenuButton from "./MobileMenuButton";
-import CTAButton from "./CTAButton";
+import { Button } from "../ui/Button";
+import CalendlyPopup from "../CalendlyPopup";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
+  // Detect scroll for header blur + background
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed inset-x-0  top-0 z-30 transition-all duration-300 
-      ${
+      className={`fixed inset-x-0 top-0 z-30 transition-all duration-300 ${
         isScrolled
           ? "bg-brand-hover/80 backdrop-blur-md shadow-md"
           : "bg-brand-hover/50 backdrop-blur-sm"
-      }
-      `}
+      }`}
     >
-      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Left: Logo */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        {/* Logo */}
         <Logo />
 
-        {/* Desktop Navigation (hidden on mobile) */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <DesktopNav
             navItems={navItems}
             openSubmenuIndex={openSubmenuIndex}
             setOpenSubmenuIndex={setOpenSubmenuIndex}
           />
-          <CTAButton />
+
+          <div className="flex items-center">
+            <Button
+              onClick={() => setShowPopup(true)}
+              className="group flex items-center gap-2 px-4 py-3 md:px-6 md:py-4 text-[14px] md:text-xl bg-brand-primary text-brand-text hover:bg-brand-hover transition"
+            >
+              Book a Strategy Call
+            </Button>
+          </div>
+
+          <CalendlyPopup open={showPopup} onClose={() => setShowPopup(false)} />
         </div>
 
-        {/* Mobile Menu Toggle (hidden on desktop) */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <MobileMenuButton
             isOpen={isMobileMenuOpen}
