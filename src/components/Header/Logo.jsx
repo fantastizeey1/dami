@@ -4,11 +4,10 @@ const Logo = () => {
   return (
     <Link to="/" className="flex items-center gap-2">
       <img
-        src="/inky.png"
+        src="/inkyRepertoire.svg"
         alt="Company Logo"
-        className="object-contain w-16 h-14"
+        className="object-contain w-56 h-14"
       />
-      <p className="text-2xl font-semibold">InkyRepertoire</p>
     </Link>
   );
 };
