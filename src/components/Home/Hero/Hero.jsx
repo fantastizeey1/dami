@@ -3,14 +3,14 @@ import HeroContent from "./HeroContent";
 import BackgroundSlider from "../../BackgroundSlider";
 
 const backgroundImages = [
-  {
-    url: "/dammy1.jpg",
-    alt: "Modern Workspace with Laptop",
-  },
-  {
-    url: "/dammy2.png",
-    alt: "Team Collaboration",
-  },
+  // {
+  //   url: "/dammy1.jpg",
+  //   alt: "Modern Workspace with Laptop",
+  // },
+  // {
+  //   url: "/dammy2.png",
+  //   alt: "Team Collaboration",
+  // },
   {
     url: "/dammy3.jpg",
     alt: "Analytics Dashboard",
