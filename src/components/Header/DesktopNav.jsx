@@ -1,34 +1,35 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import NavSubmenu from "./NavSubmenu";
-import { NavLink } from "react-router-dom";
+import { navItems } from "./navigation-data";
 
-const DesktopNav = ({ navItems, openSubmenuIndex, setOpenSubmenuIndex }) => {
+const DesktopNav = ({ openSubmenuIndex, setOpenSubmenuIndex }) => {
   return (
-    <div className="hidden md:flex space-x-6">
+    <div className="hidden md:flex items-center gap-8">
       {navItems.map((item, index) => (
         <div
           key={index}
-          className="relative group"
-          onMouseEnter={() => setOpenSubmenuIndex(index)}
+          className="relative"
+          onMouseEnter={() => item.submenu && setOpenSubmenuIndex(index)}
           onMouseLeave={() => setOpenSubmenuIndex(null)}
         >
           <NavLink
-            to={`${item.name.toLowerCase().replace(/ /g, "-")}`}
-            className=" flex items-center "
-            aria-label={`Go to ${item.name}`}
+            to={item.name.toLowerCase().replace(/ /g, "-")}
+            className="flex items-center hover:text-brand-primary transition"
           >
             {item.name}
+
             {item.submenu && (
               <span className="ml-1">
                 {openSubmenuIndex === index ? (
-                  <FiChevronUp size={16} />
+                  <FiChevronUp />
                 ) : (
-                  <FiChevronDown size={16} />
+                  <FiChevronDown />
                 )}
               </span>
             )}
           </NavLink>
+
           {item.submenu && openSubmenuIndex === index && (
             <NavSubmenu items={item.submenu} />
           )}

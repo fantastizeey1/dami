@@ -7,7 +7,7 @@ const AboutPartner = () => {
         <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
           <div className="lg:w-1/2">
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
+              src="meeting1.jpg"
               alt="Business partnership"
               className="rounded-2xl shadow-2xl"
             />

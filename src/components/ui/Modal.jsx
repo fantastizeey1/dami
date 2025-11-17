@@ -7,14 +7,12 @@ export default function Modal({ open, onClose, children }) {
   const dialogRef = useRef(null);
   const modalRoot = document.getElementById("modal-root") || document.body;
 
-  // Close on ESC
   useEffect(() => {
     const handleEsc = (e) => e.key === "Escape" && onClose();
     if (open) document.addEventListener("keydown", handleEsc);
     return () => document.removeEventListener("keydown", handleEsc);
   }, [open, onClose]);
 
-  // Focus trap
   useEffect(() => {
     if (open && dialogRef.current) {
       const focusable = dialogRef.current.querySelectorAll(
@@ -38,7 +36,8 @@ export default function Modal({ open, onClose, children }) {
         >
           <motion.div
             ref={dialogRef}
-            className="bg-white rounded-2xl shadow-2xl w-[90%] md:w-[600px] lg:w-[950px] h-[80%] lg:h-[80%] relative overflow-hidden outline-none"
+            className="bg-white rounded-2xl shadow-2xl w-[90%] md:w-[600px] lg:w-[950px] h-[80%] lg:h-[80%] 
+                       relative overflow-hidden outline-none z-[100]"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.97 }}
@@ -47,11 +46,12 @@ export default function Modal({ open, onClose, children }) {
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary rounded-full"
-              aria-label="Close modal"
+              className="absolute top-4 right-4 z-[2000] text-gray-500 hover:text-gray-800 text-2xl 
+                         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary rounded-full"
             >
               ✕
             </button>
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

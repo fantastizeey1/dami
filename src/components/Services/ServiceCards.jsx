@@ -19,8 +19,7 @@ const ServiceCards = () => {
       description:
         "To attract subscribers, we will create the right kind of lead magnet for your small business. We ensure that your lead magnet is irresistible to your audience.",
       Icon: Magnet,
-      image:
-        "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000",
+      image: "meeting2.jpg",
     },
     {
       title: "Email Marketing & Execution",

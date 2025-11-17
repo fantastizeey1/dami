@@ -7,7 +7,7 @@ const AboutSimplicity = () => {
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:mb-20">
           <div className="lg:w-1/2">
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+              src="meeting4.jpg"
               alt="Team collaboration"
               className="rounded-2xl shadow-2xl"
             />

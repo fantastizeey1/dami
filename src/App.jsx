@@ -8,6 +8,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { FormProvider } from "./FormProvider";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingSkeleton from "./components/ui/LoadingSkeleton";
+import CalendlyPreloader from "./components/CalendlyPreloader";
 
 // Lazy load pages for performance
 const Header = lazy(() => import("./components/Header/Header"));
@@ -54,6 +55,7 @@ function AppContent() {
   return (
     <main className="max-w-full font-sans overflow-x-hidden">
       <Suspense fallback={<LoadingSkeleton />}>
+        <CalendlyPreloader />
         {/* Conditionally render Header */}
         {shouldShowHeader && <Header />}
 

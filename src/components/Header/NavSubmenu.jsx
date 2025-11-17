@@ -1,22 +1,24 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
-const NavSubmenu = ({ items, isMobile = false, closeMenu }) => {
-  const baseClasses = isMobile
-    ? "mt-2 flex flex-col bg-gray-100 dark:bg-gray-700 shadow-md rounded-md p-2"
-    : "absolute left-0 top-full flex flex-col bg-gray-100 dark:bg-gray-700 shadow-md rounded-md z-10 pointer-events-auto";
+const NavSubmenu = ({ items, isMobile, closeMenu }) => {
+  if (!items) return null;
 
   return (
-    <div className={baseClasses}>
-      {items.map((item, index) => (
+    <div
+      className={`flex flex-col ${
+        isMobile
+          ? "ml-4 mt-2 space-y-2"
+          : "absolute left-0 mt-2  shadow-md rounded-md p-2 w-48"
+      }`}
+    >
+      {items.map((label, i) => (
         <NavLink
-          key={index}
-          to={`#${item.toLowerCase().replace(/ /g, "-")}`}
-          className="px-4 py-2 hover:text-[#850000] whitespace-nowrap"
-          aria-label={`Go to ${item}`}
-          onClick={isMobile ? closeMenu : null} // Close menu for mobile navigation
+          key={i}
+          to={label.toLowerCase().replace(/ /g, "-")}
+          onClick={isMobile ? closeMenu : undefined}
+          className="px-3 py-1 hover:text-brand-primary"
         >
-          {item}
+          {label}
         </NavLink>
       ))}
     </div>
