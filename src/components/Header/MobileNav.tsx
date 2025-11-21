@@ -5,7 +5,7 @@ import NavSubmenu from "./NavSubmenu";
 import { navItems } from "./navigation-data";
 import { Button } from "../ui/Button"; // Ensure this path is correct
 import CalendlyPopup from "../CalendlyPopup"; // Ensure this path is correct
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 interface MobileNavProps {
   isOpen: boolean;

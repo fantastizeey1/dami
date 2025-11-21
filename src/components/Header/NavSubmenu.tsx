@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { cn } from "@/lib/utils"; // Use your new utility
+import { cn } from "../../lib/utils"; // Use your new utility
 import { SubMenuItem } from "./navigation-data";
 
 interface NavSubmenuProps {

@@ -11,7 +11,6 @@ import {
   Loader2,
 } from "lucide-react";
 import { SEO } from "../SEO"; // Adjust path if needed
-import { cn } from "@/lib/utils";
 
 // Define the time interface
 interface TimeLeft {
