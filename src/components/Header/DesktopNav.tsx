@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import NavSubmenu from "./NavSubmenu";
 import { navItems } from "./navigation-data";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 interface DesktopNavProps {
   openSubmenuIndex: number | null;

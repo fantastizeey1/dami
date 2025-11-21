@@ -69,23 +69,30 @@ export default function Comingsoon() {
     setIsSubmitting(true);
 
     try {
-      // 1. Send data to Formspree
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID_HERE", {
+      // Web3Forms Endpoint
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({ email: email }),
+        body: JSON.stringify({
+          // ⚠️ PASTE YOUR ACCESS KEY HERE
+          access_key: "YOUR-ACCESS-KEY-FROM-EMAIL-GOES-HERE",
+
+          email: email,
+          subject: "New Waitlist Signup - InkyRepertoire", // Subject line you will see
+          from_name: "Inky Waitlist",
+        }),
       });
 
-      if (response.ok) {
-        // Success!
+      const result = await response.json();
+
+      if (result.success) {
         setIsJoined(true);
         setEmail("");
       } else {
-        // Handle errors (optional: show an alert)
-        console.error("Submission failed");
+        console.error("Error:", result);
         alert("Something went wrong. Please try again.");
       }
     } catch (error) {
